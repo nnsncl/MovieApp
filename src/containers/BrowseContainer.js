@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Navbar } from '../components'
+import { Navbar, Card } from '../components'
 
 import firebaseApp from '../firebase';
 import axios from 'axios'
@@ -14,11 +14,11 @@ export function BrowseContainer() {
                 setMovies(response.data);
             }
             fetchData();
-            
-        } catch(error) {
+
+        } catch (error) {
             console.log(error.message)
         }
-   
+
     }, []);
 
     return (
@@ -26,16 +26,18 @@ export function BrowseContainer() {
             <Navbar>
                 <Navbar.Frame>
                     <p>Navbar</p>
+                    <Navbar.Button onClick={() => firebaseApp.auth().signOut()} >
+                        Sign out
+                    </Navbar.Button>
                 </Navbar.Frame>
             </Navbar>
-            <h1>Browse</h1>
-            <button onClick={() => firebaseApp.auth().signOut()} >Sign out</button>
             {movies.map(item =>
-            <div key={item.id} >
-                <img src={item.poster} alt='img' />
-                <p >{item.title}</p>
-            </div>
-               
+                <Card key={item.id} >
+                    <Card.Image src={item.poster} alt={item.title} />
+                    <Card.ContentFrame>
+                        <p >{item.title}</p>
+                    </Card.ContentFrame>
+                </Card>
             )}
         </>
     )
