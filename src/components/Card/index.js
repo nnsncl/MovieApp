@@ -1,8 +1,12 @@
 import React from 'react'
-import { Container, Image, ContentFrame } from './styles/Card'
+import { Container, Image, ContentFrame, Grid } from './styles/Card'
 
 export default function Card({ children, ...restProps }) {
     return <Container {...restProps} >{children}</Container>
+}
+
+Card.Grid = function CardGrid({ children, ...restProps }){
+    return <Grid {...restProps} >{children}</Grid>
 }
 
 Card.Image = function CardImage({ src, alt, ...restProps }) {
