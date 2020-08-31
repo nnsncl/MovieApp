@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     margin: 95px 0 23px 0;
+
 `;
 
 export const Flex = styled.div`

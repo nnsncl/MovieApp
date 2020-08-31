@@ -12,7 +12,6 @@ export const Frame = styled.div`
 `;
 
 
-
 export const Container = styled.div`
     margin-right: 13px;
     height: auto;
