@@ -15,14 +15,13 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: black;
-        color: #333;
+        ${'' /* background-color: black;
+        color: #333; */}
         font-size: 62.5%;
         margin: 0 auto;
     }
 
     h1,h2,h3,h4,h5,h6 {
         font-family: 'Manrope', sans-serif;
-        color: white;
     }
 `;
