@@ -15,8 +15,8 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        ${'' /* background-color: black;
-        color: #333; */}
+        background-color: black;
+        color: white;
         font-size: 62.5%;
         margin: 0 auto;
     }
