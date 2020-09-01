@@ -8,18 +8,20 @@ export const Container = styled.div`
 export const Frame = styled.div`
     position: absolute;
     z-index: 2;
-    padding-top: 195px;
-    margin-top: 195px;
+    padding-top: 136px;
+    margin-top: 136px;
     h1 {
             font-size: 13.6rem;
-            margin-bottom: 23px;
+            margin-bottom: 9px;
         }
     p{
         font-size: 2.3rem;
+        margin-bottom: 36px;
     }
 
     @media(max-width: 1056px){
         max-width: 100%;
+        padding-right: 36px;
 
         h1 {
             font-size: 5.6rem;
