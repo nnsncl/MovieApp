@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Flex, Title, Subtitle, Button } from './styles/Heading'
+import { Container, Flex, Title, Subtitle } from './styles/Heading'
 
 export default function HeadingSection({ children, ...restProps }){
     return <Container {...restProps} >{children}</Container>
@@ -15,8 +15,4 @@ HeadingSection.Title = function HeadingSectionTitle({ children, ...restProps }){
 
 HeadingSection.Subtitle = function HeadingSectionSubtitle({ children, ...restProps }){
     return <Subtitle {...restProps} >{children}</Subtitle>
-}
-
-HeadingSection.Button = function HeadingSectionButton({ children, ...restProps }){
-    return <Button {...restProps} >{children}</Button>
 }
