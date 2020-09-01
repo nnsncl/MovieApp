@@ -11,7 +11,7 @@ export default function BrowseContainer() {
                     <Heading>
                         <Heading.Flex>
                             <Heading.Subtitle>Votre liste</Heading.Subtitle>
-                            <Button>Ajouter un film</Button>
+                            <Button.Light to={'/add'} >Ajouter un film</Button.Light>
                         </Heading.Flex>
                     </Heading>
                 </Grid.Col>
