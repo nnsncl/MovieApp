@@ -41,7 +41,7 @@ export default function BrowseContainer() {
                                 <Card.Image src={item.poster} alt={item.title} />
                                 <Card.ContentFrame>
                                     <Card.Title>{item.title}</Card.Title>
-                                    <Button.Light>Voir les détails</Button.Light>
+                                    <Button.Light to='/details' >Details</Button.Light>
                                 </Card.ContentFrame>
                             </Card>
                         )}
