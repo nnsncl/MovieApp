@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link as ReachRouterLink } from 'react-router-dom';
 
 export const Button = styled.button`
     appearance: none;
@@ -24,11 +25,21 @@ export const Large = styled(Button)`
     padding: 23px 36px;
 `;
 
-export const Light = styled(Button)`
+export const Light = styled(ReachRouterLink)`
+    display: block;
+    appearance: none;
+    letter-spacing: -.9px;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    color: #FAFAFA;
+    border-radius: 8px;
+    transition: color .2s;
 
-    background: #FAFAFA;
-    color: black;
     &:hover {
-        background: white;
+        color: white;
     }
 `;

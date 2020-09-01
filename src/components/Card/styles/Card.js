@@ -32,7 +32,6 @@ export const Image = styled.img`
 `;
 
 export const ContentFrame = styled.div`
-    text-align: center;
 `;
 
 export const Title = styled.p`

@@ -1,25 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Card, Grid, Heading, Button } from '../components'
-
-import axios from 'axios'
-
+import { LocalDatabaseContext } from '../constant/LocalDababase'
 export default function BrowseContainer() {
-    const [movies, setMovies] = useState([])
-
-    useEffect(() => {
-        try {
-            const fetchData = async () => {
-                const response = await axios.get('http://localhost:3000/movies');
-                setMovies(response.data);
-                console.log(response.data)
-            }
-            fetchData();
-
-        } catch (error) {
-            console.log(error.message)
-        }
-
-    }, []);
+    const { movies } = useContext(LocalDatabaseContext)
 
     return (
         <Grid maxFreeze={'true'} >
@@ -36,15 +19,17 @@ export default function BrowseContainer() {
             <Grid.Row>
                 <Grid.Col size={1} >
                     <Card.Frame>
+
                         {movies.map(item =>
                             <Card key={item.id} >
                                 <Card.Image src={item.poster} alt={item.title} />
                                 <Card.ContentFrame>
                                     <Card.Title>{item.title}</Card.Title>
-                                    <Button.Light>Voir les détails</Button.Light>
+                                    <Button.Light to={'/details/' + item.id} >Details</Button.Light>
                                 </Card.ContentFrame>
                             </Card>
                         )}
+
                     </Card.Frame>
                 </Grid.Col>
             </Grid.Row>
