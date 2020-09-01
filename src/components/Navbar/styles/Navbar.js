@@ -36,23 +36,3 @@ export const Logotype = styled.p`
         }
     }
 `;
-
-export const Button = styled.button`
-    appearance: none;
-    letter-spacing: -.9px;
-    outline: none;
-    box-sizing: border-box;
-    font-size: 1.6rem;
-    font-weight: bold;
-    border: 0;
-    cursor: pointer;
-    color: #0d0c22;
-    padding: 13px 19px;
-    background: #f3f3f4;
-    border-radius: 8px;
-    transition: background .2s;
-
-    &:hover {
-        background: #D8D8D8;
-    }
-`;
