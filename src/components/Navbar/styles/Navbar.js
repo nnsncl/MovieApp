@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link as ReachRouterLink } from 'react-router-dom';
 
 export const Container = styled.nav`
     width: 100%;
@@ -14,11 +15,13 @@ export const Frame = styled.div`
     align-items: flex-end;
 `;
 
-export const Logotype = styled.p`
+export const Logotype = styled(ReachRouterLink)`
     font-size: 1.9rem;
     font-weight: 800;
     letter-spacing: -1.3px;
-
+    text-decoration: none;
+    color: white;
+    
     &::after {
         content: '•';
         font-size: 3.6rem;
