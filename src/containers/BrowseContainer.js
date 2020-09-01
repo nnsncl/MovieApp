@@ -19,15 +19,17 @@ export default function BrowseContainer() {
             <Grid.Row>
                 <Grid.Col size={1} >
                     <Card.Frame>
+
                         {movies.map(item =>
                             <Card key={item.id} >
                                 <Card.Image src={item.poster} alt={item.title} />
                                 <Card.ContentFrame>
                                     <Card.Title>{item.title}</Card.Title>
-                                    <Button.Light to='/details' >Details</Button.Light>
+                                    <Button.Light to={'/details/' + item.id} >Details</Button.Light>
                                 </Card.ContentFrame>
                             </Card>
                         )}
+
                     </Card.Frame>
                 </Grid.Col>
             </Grid.Row>
