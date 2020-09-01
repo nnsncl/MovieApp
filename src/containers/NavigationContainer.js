@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar } from '../components'
+import { Navbar, Button } from '../components'
 
 import firebaseApp from '../firebase';
 
@@ -8,9 +8,9 @@ export default function NavigationContainer() {
         <Navbar>
             <Navbar.Frame>
                 <Navbar.Logotype>MovieBoard</Navbar.Logotype>
-                <Navbar.Button onClick={() => firebaseApp.auth().signOut()} >
-                    Sign out
-            </Navbar.Button>
+                <Button onClick={() => firebaseApp.auth().signOut()} >
+                Sign out
+                </Button>
             </Navbar.Frame>
         </Navbar>
     )

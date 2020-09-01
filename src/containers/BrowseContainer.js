@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Card, Grid, Heading } from '../components'
+import { Card, Grid, Heading, Button } from '../components'
 
 import axios from 'axios'
 
@@ -28,7 +28,7 @@ export default function BrowseContainer() {
                     <Heading>
                         <Heading.Flex>
                             <Heading.Subtitle>Votre liste</Heading.Subtitle>
-                            <Heading.Button>Ajouter un film</Heading.Button>
+                            <Button>Ajouter un film</Button>
                         </Heading.Flex>
                     </Heading>
                 </Grid.Col>
@@ -41,6 +41,7 @@ export default function BrowseContainer() {
                                 <Card.Image src={item.poster} alt={item.title} />
                                 <Card.ContentFrame>
                                     <Card.Title>{item.title}</Card.Title>
+                                    <Button.Light>Voir les détails</Button.Light>
                                 </Card.ContentFrame>
                             </Card>
                         )}
