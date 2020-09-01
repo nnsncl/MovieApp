@@ -14,6 +14,7 @@ export const Frame = styled.div`
 
 export const Container = styled.div`
     margin-right: 13px;
+    margin-bottom: 23px;
     height: auto;
     
 
@@ -27,7 +28,6 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-    border-radius: 23px;
     width: 100%;
 `;
 
