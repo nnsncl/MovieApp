@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import { NavigationContainer } from '../containers'
 import { SearchInput, Card, Button } from '../components'
 import axios from 'axios'
 import Fuse from 'fuse.js'
@@ -36,7 +35,6 @@ export default function Add() {
 
     return (
         <>
-            {/* <NavigationContainer /> */}
             <SearchInput>
                 <SearchInput.Field
                     type='text'
@@ -44,18 +42,16 @@ export default function Add() {
                     setQuery={setQuery}
                 />
             </SearchInput>
-           {
-            distantMovies.map(item =>
+            {
+                distantMovies.map(item =>
                     <Card key={item.id}>
                         <Card.Image src={'http://image.tmdb.org/t/p/w342' + item.poster_path} alt={item.title} />
                         <Card.ContentFrame>
                             <Card.Title>{item.title}</Card.Title>
                             <Button.Light to={'/edit/' + item.id} >Edit</Button.Light>
-                            <Button>Delete</Button>
                         </Card.ContentFrame>
                     </Card>)
-           }
-
+            }
         </>
     );
 };
