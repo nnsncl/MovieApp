@@ -13,16 +13,11 @@ export default function Add() {
     useEffect(() => {
 
         if (query.length > 0) {
-            try {
-                const fetchDistantData = async () => {
-                    const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=8028f8241d31d1afd36f7eb2de10193b&query=${query}&page=1&include_adult=false`);
-                    setDistantMovies(response.data.results);
-                }
-                fetchDistantData();
-
-            } catch (error) {
-                alert(error.message)
+            const fetchDistantData = async () => {
+                const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=8028f8241d31d1afd36f7eb2de10193b&query=${query}&page=1&include_adult=false`);
+                setDistantMovies(response.data.results);
             }
+            fetchDistantData();
         }
 
         const options = {
