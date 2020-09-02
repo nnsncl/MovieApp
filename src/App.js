@@ -10,17 +10,14 @@ export default function App() {
   return (
     <AuthProvider>
       <LocalDatabaseProvider>
-        {/* Everything nested in AuthProvider will have access to currentUser through the context API */}
         <Router>
-          {/* Wrap the routes in Router which provides browsing context */}
           <div>
             <PrivateRoute exact path='/' component={Browse} />
-            {/* Set Home as a Private route. This Route will be available only for authenticated users */}
             <Route exact path='/signin' component={SignIn} />
             <Route exact path='/signup' component={SignUp} />
-            <Route exact path='/edit' component={Edit} />
-            <Route exact path='/details/:id' component={Details} />
-            <Route exact path='/add' component={Add} />
+            <PrivateRoute exact path='/edit' component={Edit} />
+            <PrivateRoute exact path='/details/:id' component={Details} />
+            <PrivateRoute exact path='/add' component={Add} />
           </div>
         </Router>
       </LocalDatabaseProvider>
