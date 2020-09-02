@@ -7,7 +7,7 @@ export default function DistantMovieContainer() {
     useEffect(() => {
         try {
             const fetchDistantData = async () => {
-                const response = await axios.get(`https://api.themoviedb.org/3/movie/120?api_key=8028f8241d31d1afd36f7eb2de10193b`);
+                const response = await axios.get(`https://api.themoviedb.org/3/movie/120?api_key=${process.env.REACT_APP_TMDB_KEY}`);
                 setDistantMovies(response.data);
             }
             fetchDistantData();
