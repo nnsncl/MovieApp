@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { LocalDatabaseContext } from '../constant/LocalDababase'
-import { NavigationContainer } from '../containers'
+// import { NavigationContainer } from '../containers'
 import { useParams } from "react-router-dom";
 import { Grid } from '../components'
 
@@ -12,26 +12,27 @@ export default function Details() {
 
     return (
         <>
-            <NavigationContainer />
             {filteredMovie !== undefined &&
                 <Grid maxFreeze={'true'} >
                     <Grid.Row>
                         <Grid.Col size={1} >
-                            <h1>{filteredMovie.title}</h1>
-                            <p>{filteredMovie.description}</p>
-                            <p>{filteredMovie.release_date}</p>
-                            {filteredMovie.categories.map(item =>
-                                <p key={item} >{item}</p>
-                            )}
-                            <img src={filteredMovie.backdrop} alt={filteredMovie.backdrop} />
-                            <img src={filteredMovie.poster} alt={filteredMovie.poster} />
-                            {filteredMovie.actors.map(item =>
-                                <div key={item.name} >
-                                    <p>{item.name}</p>
-                                    <img src={item.photo} alt={item.name} />
-                                    <p>{item.character}</p>
-                                </div>
-                            )}
+                            <form>
+                                <input type='text' defaultValue={filteredMovie.title} placeholder={filteredMovie.title} />
+                                <input type='text' defaultValue={filteredMovie.description} placeholder={filteredMovie.description} />
+                                <input type='text' defaultValue={filteredMovie.realease_date} placeholder={filteredMovie.realease_date} />
+                                {filteredMovie.categories.map(item =>
+                                    <input key={item} type='text' defaultValue={item} placeholder={item} />
+                                )}
+                                <img src={filteredMovie.backdrop} alt={filteredMovie.backdrop} />
+                                <img src={filteredMovie.poster} alt={filteredMovie.poster} />
+                                {filteredMovie.actors.map(item =>
+                                    <div key={item.name} >
+                                        <img src={item.photo} alt={item.name} />
+                                        <input type='text' defaultValue={item.name} placeholder={item.name} />
+                                        <input type='text' defaultValue={item.character} placeholder={item.character} />
+                                    </div>
+                                )}
+                            </form>
                         </Grid.Col>
                     </Grid.Row>
                 </Grid>
