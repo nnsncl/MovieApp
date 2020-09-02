@@ -15,7 +15,7 @@ export default function App() {
             <PrivateRoute exact path='/' component={Browse} />
             <Route exact path='/signin' component={SignIn} />
             <Route exact path='/signup' component={SignUp} />
-            <PrivateRoute exact path='/edit' component={Edit} />
+            <PrivateRoute exact path='/edit/:id' component={Edit} />
             <PrivateRoute exact path='/details/:id' component={Details} />
             <PrivateRoute exact path='/add' component={Add} />
           </div>
