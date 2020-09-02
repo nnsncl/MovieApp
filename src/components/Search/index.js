@@ -12,6 +12,7 @@ SearchInput.Field = function SearchInputField({ query, setQuery, ...restProps })
         <FieldContainer {...restProps} >
             <SearchButton onClick={() => setSearchActive(!searchActive)}>search</SearchButton>
             <Field
+                {...restProps}
                 value={query}
                 onChange={({ target }) => setQuery(target.value)}
                 placeholder='Search'
