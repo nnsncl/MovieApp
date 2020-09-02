@@ -4,11 +4,10 @@ import axios from 'axios'
 
 export default function DistantMovieContainer() {
     const [distantMovies, setDistantMovies] = useState([])
-
     useEffect(() => {
         try {
             const fetchDistantData = async () => {
-                const response = await axios.get('https://api.themoviedb.org/3/movie/676?api_key=8028f8241d31d1afd36f7eb2de10193b');
+                const response = await axios.get(`https://api.themoviedb.org/3/movie/120?api_key=8028f8241d31d1afd36f7eb2de10193b`);
                 setDistantMovies(response.data);
             }
             fetchDistantData();
@@ -31,7 +30,7 @@ export default function DistantMovieContainer() {
                             <ImageSection.Frame>
                                 <h1>{distantMovies.title}</h1>
                                 <p>{distantMovies.tagline}</p>
-                                <Button.Large href={distantMovies.homepage} target="_blank" rel="noopener noreferrer" >Regarder maintenant</Button.Large>
+                                <Button.Large href={distantMovies.homepage} target="_blank" rel="noopener noreferrer" >Watch now</Button.Large>
                             </ImageSection.Frame>
                         </Grid.Col>
                     </Grid.Row>

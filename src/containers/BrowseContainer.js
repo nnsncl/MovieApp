@@ -10,8 +10,8 @@ export default function BrowseContainer() {
                 <Grid.Col size={1} >
                     <Heading>
                         <Heading.Flex>
-                            <Heading.Subtitle>Votre liste</Heading.Subtitle>
-                            <Button.Light to={'/add'} >Ajouter un film</Button.Light>
+                            <Heading.Subtitle>Your list</Heading.Subtitle>
+                            <Button.Light to={'/add'} >Add movies</Button.Light>
                         </Heading.Flex>
                     </Heading>
                 </Grid.Col>
