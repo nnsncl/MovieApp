@@ -7,7 +7,7 @@ export default function NavigationContainer() {
     return (
         <Navbar>
             <Navbar.Frame>
-                <Navbar.Logotype>MovieBoard</Navbar.Logotype>
+                <Navbar.Logotype to='/' >MovieBoard</Navbar.Logotype>
                 <Button onClick={() => firebaseApp.auth().signOut()} >
                 Sign out
                 </Button>

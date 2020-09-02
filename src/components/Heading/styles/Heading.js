@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    margin: 95px 0 23px 0;
+    margin: 56px 0;
 
 `;
 
@@ -20,6 +20,6 @@ export const Subtitle = styled.h2`
     letter-spacing: -1.9px;
 
     @media(max-width: 813px){
-        font-size: 3.6rem;
+        font-size: 2.3rem;
     }
 `;

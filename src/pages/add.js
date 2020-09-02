@@ -1,9 +1,10 @@
 import React from 'react';
+import { SearchQueryContainer } from '../containers'
 
-export default function Add() {
+export default function Browse() {
     return (
         <>
-            <h1>Add</h1>
+            <SearchQueryContainer />
         </>
     );
 };
