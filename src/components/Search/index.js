@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
-import { Container, Field, Label, FieldContainer, SearchButton } from './styles/Search'
+import { Container, Field, Label, FieldContainer } from './styles/Search'
 
 export default function SearchInput({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
 }
 
-SearchInput.Field = function SearchInputField({ query, setQuery, ...restProps }) {
+SearchInput.Field = function SearchInputField({ query, setQuery, placeholder, ...restProps }) {
     const [searchActive, setSearchActive] = useState(false)
 
     return (
         <FieldContainer {...restProps} >
-            <SearchButton onClick={() => setSearchActive(!searchActive)}>search</SearchButton>
             <Field
+                onClick={() => setSearchActive(!searchActive)}
                 {...restProps}
                 value={query}
                 onChange={({ target }) => setQuery(target.value)}
-                placeholder='Search'
+                placeholder={placeholder}
                 active={searchActive}
             />
         </FieldContainer>
