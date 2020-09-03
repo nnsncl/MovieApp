@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ImageSection, Grid, Button } from '../components'
 import axios from 'axios'
 
-export default function DistantMovieContainer() {
+export default function MainHeroContainer() {
     const [distantMovies, setDistantMovies] = useState([])
     useEffect(() => {
         try {
