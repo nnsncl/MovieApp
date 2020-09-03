@@ -3,7 +3,7 @@ import { LocalDatabaseContext } from '../constant/LocalDababase'
 import { v4 as uuidv4 } from 'uuid'
 import { NavigationContainer } from '../containers'
 import { useParams } from "react-router-dom";
-import { Grid, Heading, Section, ImageSection, Input, Card, Chips, Button } from '../components'
+import { Grid, Heading, Section, ImageSection, Card, Chips, Button } from '../components'
 
 export default function Details() {
     const { movies } = useContext(LocalDatabaseContext)
