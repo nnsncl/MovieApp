@@ -20,7 +20,7 @@ const mediaQueries = {
 
 export const Container = styled.div`
     ${(restProps) => restProps.maxFreeze === 'true' && (`
-       max-width: 1920px;
+       max-width: 1441px;
     `)}
     margin: 0 auto;
 `;
@@ -28,6 +28,11 @@ export const Container = styled.div`
 export const Row = styled.div`
     display: flex;
     flex-wrap: wrap;
+
+    @media(max-width: 672px) {
+        flex-direction: ${(restProps) => restProps.responsiveCol === 'true' && (`column`)}
+    }
+
 `;
 
 export const Col = styled.div`
