@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { SearchInput, Card, Button } from '../components'
+import React, { useState, useEffect } from 'react'
+import { v4 as uuidv4 } from 'uuid'
+import { Grid, Section, Heading, SearchInput, Card, Button } from '../components'
+import NavigationContainer from './NavigationContainer'
 import axios from 'axios'
 import Fuse from 'fuse.js'
 
@@ -9,6 +11,7 @@ export default function Add() {
     const [distantMovies, setDistantMovies] = useState([])
 
     useEffect(() => {
+
         if (query.length > 0) {
             const fetchDistantData = async () => {
                 const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&query=${query}&page=1&include_adult=false`);
@@ -35,23 +38,56 @@ export default function Add() {
 
     return (
         <>
-            <SearchInput>
-                <SearchInput.Field
-                    type='text'
-                    query={query}
-                    setQuery={setQuery}
-                />
-            </SearchInput>
-            {
-                distantMovies.map(item =>
-                    <Card key={item.id}>
-                        <Card.Image src={'http://image.tmdb.org/t/p/w342' + item.poster_path} alt={item.title} />
-                        <Card.ContentFrame>
-                            <Card.Title>{item.title}</Card.Title>
-                            <Button.Light to={'/edit/' + item.id} >Edit</Button.Light>
-                        </Card.ContentFrame>
-                    </Card>)
-            }
+            <NavigationContainer />
+            <Grid maxFreeze={'true'} >
+                <Grid.Row>
+                    <Grid.Col size={1}>
+                        <Heading>
+                            <SearchInput>
+                                <SearchInput.Field
+                                    type='text'
+                                    query={query}
+                                    setQuery={setQuery}
+                                    placeholder='Search...'
+                                />
+                            </SearchInput>
+                        </Heading>
+
+                    </Grid.Col>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Col size={1} >
+                        {distantMovies.length > 0 &&
+                            <Heading>
+                                <Heading.Subtitle>Actors list</Heading.Subtitle>
+                            </Heading>
+                        }
+                        <Section>
+                            <Section.Frame>
+                                {distantMovies.map(item =>
+                                    <Card.FixedWidth key={uuidv4()} >
+                                        {item.poster_path === null ?
+                                            <Card.Image src={'https://via.placeholder.com/349x524'} alt={item.title} /> :
+                                            <Card.Image src={'http://image.tmdb.org/t/p/w342' + item.poster_path} alt={item.title} />
+                                        }
+                                        <Card.ContentFrame>
+                                        <Card.Row>
+                                                <Card.Title>{item.title}</Card.Title>
+                                                <Button.Light to={'/edit/' + item.id} >✎</Button.Light>
+                                            </Card.Row>
+                                            <Card.Row>
+                                                <Button>Add to my list</Button>
+                                            </Card.Row>
+                                        </Card.ContentFrame>
+                                    </Card.FixedWidth>
+                                )}
+
+                            </Section.Frame>
+                        </Section>
+                    </Grid.Col>
+                </Grid.Row>
+            </Grid>
+
         </>
     );
 };
