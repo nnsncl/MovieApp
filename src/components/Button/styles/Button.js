@@ -31,16 +31,16 @@ export const Light = styled(ReachRouterLink)`
     letter-spacing: -.9px;
     outline: none;
     box-sizing: border-box;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     font-weight: bold;
     text-decoration: none;
     padding: 13px 19px;
     background: #0b090a;
-    border: 1px solid #f3f3f4;
     cursor: pointer;
     color: #FAFAFA;
     border-radius: 8px;
     transition: ease-out .2s;
+    width: fit-content;
 
     &:hover {
         background: #f3f3f4;
