@@ -12,12 +12,12 @@ export const Button = styled.button`
     cursor: pointer;
     color: white;
     padding: 13px 19px;
-    background: #d00000;
+    background: #D00000;
     border-radius: 8px;
     transition: background .2s;
 
     &:hover {
-        background: red;
+        background: #9D0208;
     }
 `;
 
@@ -34,9 +34,31 @@ export const Light = styled(ReachRouterLink)`
     font-size: 1.6rem;
     font-weight: bold;
     text-decoration: none;
+    padding: 13px 19px;
+    background: #0b090a;
+    border: 1px solid #f3f3f4;
     cursor: pointer;
     color: #FAFAFA;
     border-radius: 8px;
+    transition: ease-out .2s;
+
+    &:hover {
+        background: #f3f3f4;
+        color: #0b090a;
+    }
+`;
+
+export const Link = styled(ReachRouterLink)`
+    display: block;
+    appearance: none;
+    letter-spacing: -.9px;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    color: #FAFAFA;
     transition: color .2s;
 
     &:hover {
