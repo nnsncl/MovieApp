@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import { Grid, Section, Heading, SearchInput, Card, Button } from '../components'
+import { Grid, Section, Heading, SearchInput, Card, Button, Typography } from '../components'
 import axios from 'axios'
 import Fuse from 'fuse.js'
 
@@ -54,7 +54,7 @@ export default function Add() {
                     <Grid.Col size={1} >
                         {distantMovies.length > 0 &&
                             <Heading>
-                                <Heading.Subtitle>Search results</Heading.Subtitle>
+                                <Typography.TitleMd>Search results</Typography.TitleMd>
                             </Heading>
                         }
                         <Section>

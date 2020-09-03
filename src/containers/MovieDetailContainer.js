@@ -50,7 +50,7 @@ export default function MovieDetailContainer() {
                     <Grid maxFreeze={'true'} >
                         <Grid.Row responsiveCol={'true'} >
                             <Grid.Col size={1} >
-                                <Heading.Subtitle>Synopsys</Heading.Subtitle>
+                                <Typography.TitleMd>Resume</Typography.TitleMd>
                             </Grid.Col>
                             <Grid.Col size={2} >
                                 <Typography.BodyLarge>{filteredMovie.description}</Typography.BodyLarge>
@@ -59,7 +59,7 @@ export default function MovieDetailContainer() {
                         <Grid.Row>
                             <Grid.Col size={1} >
                                 <Heading>
-                                    <Heading.Subtitle>Actors list</Heading.Subtitle>
+                                    <Typography.TitleMd>Actors list</Typography.TitleMd>
                                 </Heading>
                                 <Section>
                                     <Section.Frame>
@@ -67,8 +67,8 @@ export default function MovieDetailContainer() {
                                             <Card.FixedWidth key={uuidv4()} >
                                                 <Card.Image src={item.photo} alt={item.name} />
                                                 <Card.ContentFrame>
-                                                    <Card.Title>{item.name}</Card.Title>
-                                                    <Card.Subtitle>{item.character}</Card.Subtitle>
+                                                    <Typography.TitleSm>{item.name}</Typography.TitleSm>
+                                                    <Typography.Body>{item.character}</Typography.Body>
                                                 </Card.ContentFrame>
                                             </Card.FixedWidth>
                                         )}
@@ -80,7 +80,7 @@ export default function MovieDetailContainer() {
                         <Grid.Row>
                             <Grid.Col>
                                 <Heading>
-                                    <Heading.Subtitle>Similar Movies</Heading.Subtitle>
+                                    <Typography.TitleMd>Similar Movies</Typography.TitleMd>
                                 </Heading>
                                 <Section>
                                     <Section.Frame>
@@ -88,8 +88,8 @@ export default function MovieDetailContainer() {
                                             <Card.FixedWidth key={uuidv4()} >
                                                 <Card.Image src={item.poster} alt={item.title} />
                                                 <Card.ContentFrame>
-                                                    <Card.Title>{item.title}</Card.Title>
-                                                    <Card.Subtitle>{item.release_date}</Card.Subtitle>
+                                                    <Typography.TitleSm>{item.title}</Typography.TitleSm>
+                                                    <Typography.Body>{item.release_date}</Typography.Body>
                                                 </Card.ContentFrame>
                                             </Card.FixedWidth>
                                         )}

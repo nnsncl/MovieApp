@@ -32,7 +32,6 @@ export const Row = styled.div`
         (`justify-content: space-between;`)
     :   (`a { margin-right: 13px; }`)
     }
-    
 `;
 
 export const FixedWidth = styled.div`
@@ -52,15 +51,4 @@ export const Image = styled.img`
 
 export const ContentFrame = styled.div`
     margin-top: 23px;
-`;
-
-export const Title = styled.p`
-    font-size: 2.3rem;
-    font-weight: 600;
-    margin: 13px 0 9px 0;
-`;
-
-export const Subtitle = styled.p`
-    font-size: 1.3rem;
-    font-weight: 600;
 `;

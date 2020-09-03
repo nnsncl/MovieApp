@@ -4,8 +4,6 @@ import {
     Image,
     ContentFrame,
     Frame,
-    Title,
-    Subtitle,
     FixedWidth,
     Row
 } from './styles/Card'
@@ -32,12 +30,4 @@ Card.ContentFrame = function CardContentFrame({ children, ...restProps }) {
 
 Card.Row = function CardContentRow({ children, ...restProps }) {
     return <Row {...restProps} >{children}</Row>
-}
-
-Card.Title = function CardTitle({ children, ...restProps }) {
-    return <Title {...restProps} >{children}</Title>
-}
-
-Card.Subtitle = function CardSubtitle({ children, ...restProps }) {
-    return <Subtitle {...restProps} >{children}</Subtitle>
 }

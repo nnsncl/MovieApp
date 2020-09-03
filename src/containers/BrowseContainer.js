@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Card, Grid, Heading, Button } from '../components'
+import { Card, Grid, Heading, Button, Typography } from '../components'
 import { LocalDatabaseContext } from '../constant/LocalDababase'
 export default function BrowseContainer() {
     const { movies } = useContext(LocalDatabaseContext)
@@ -10,7 +10,7 @@ export default function BrowseContainer() {
                 <Grid.Col size={1} >
                     <Heading>
                         <Heading.Flex>
-                            <Heading.Subtitle>Your list</Heading.Subtitle>
+                            <Typography.TitleMd>Your list</Typography.TitleMd>
                             <Button.Light to={'/add'} >Add movies</Button.Light>
                         </Heading.Flex>
                     </Heading>
@@ -24,9 +24,9 @@ export default function BrowseContainer() {
                             <Card.FixedWidth key={item.id} responsiveWide={'true'} >
                                 <Card.Image src={item.poster} alt={item.title} />
                                 <Card.ContentFrame>
-                                    <Card.Title>{item.title}</Card.Title>
-                                    <Card.Subtitle>{item.release_date}</Card.Subtitle>
-                                    <Card.Subtitle>{item.description.substring(0, 100) + '...'}</Card.Subtitle>
+                                    <Typography.TitleSm>{item.title}</Typography.TitleSm>
+                                    <Typography.TitleXs>{item.release_date}</Typography.TitleXs>
+                                    <Typography.Body>{item.description.substring(0, 100) + '...'}</Typography.Body>
                                     <Card.Row>
                                         <Button.Light to={'/details/' + item.id} >
                                             <svg aria-hidden="true" height="16px" width='16px' transform="rotate(360)" viewBox="0 0 1024 1024">

@@ -68,16 +68,16 @@ export default function DistantMovieDetailContainer() {
                     <Grid maxFreeze={'true'} >
                         <Grid.Row responsiveCol={'true'} >
                             <Grid.Col size={1} >
-                                <Heading.Subtitle>Synopsys</Heading.Subtitle>
+                                <Typography.TitleMd>Resume</Typography.TitleMd>
                             </Grid.Col>
                             <Grid.Col size={2} >
-                                <ImageSection.Subtitle>{editMovie.overview}</ImageSection.Subtitle>
+                                <Typography.BodyLarge>{editMovie.overview}</Typography.BodyLarge>
                             </Grid.Col>
                         </Grid.Row>
                         <Grid.Row>
                             <Grid.Col size={1} >
                                 <Heading>
-                                    <Heading.Subtitle>Actors list</Heading.Subtitle>
+                                    <Typography.TitleMd>Actors list</Typography.TitleMd>
                                 </Heading>
                                 <Section>
                                     <Section.Frame>
@@ -88,8 +88,8 @@ export default function DistantMovieDetailContainer() {
                                                     <Card.Image src={'http://image.tmdb.org/t/p/w342/' + item.profile_path} alt={item.name} />
                                                 }
                                                 <Card.ContentFrame>
-                                                    <Card.Title>{item.name}</Card.Title>
-                                                    <Card.Subtitle>{item.character}</Card.Subtitle>
+                                                    <Typography.TitleSm>{item.name}</Typography.TitleSm>
+                                                    <Typography.Body>{item.character}</Typography.Body>
                                                 </Card.ContentFrame>
                                             </Card.FixedWidth>
                                         )}
@@ -101,7 +101,7 @@ export default function DistantMovieDetailContainer() {
                         <Grid.Row>
                             <Grid.Col>
                                 <Heading>
-                                    <Heading.Subtitle>Similar Movies</Heading.Subtitle>
+                                    <Typography.TitleMd>Similar Movies</Typography.TitleMd>
                                 </Heading>
                                 <Section>
                                     <Section.Frame>
@@ -112,8 +112,8 @@ export default function DistantMovieDetailContainer() {
                                                     <Card.Image src={'http://image.tmdb.org/t/p/w342/' + item.poster_path} alt={item.title} />
                                                 }
                                                 <Card.ContentFrame>
-                                                    <Card.Title>{item.title}</Card.Title>
-                                                    <Card.Subtitle>{item.release_date}</Card.Subtitle>
+                                                    <Typography.TitleSm>{item.name}</Typography.TitleSm>
+                                                    <Typography.Body>{item.character}</Typography.Body>
                                                 </Card.ContentFrame>
                                             </Card.FixedWidth>
                                         )}
