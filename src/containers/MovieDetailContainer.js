@@ -3,7 +3,7 @@ import { LocalDatabaseContext } from '../constant/LocalDababase'
 import { v4 as uuidv4 } from 'uuid'
 import { NavigationContainer } from '../containers'
 import { useParams } from "react-router-dom";
-import { Grid, Heading, Section, ImageSection, Card, Chips, Button } from '../components'
+import { Grid, Heading, Section, ImageSection, Card, Chips, Button, Typography } from '../components'
 
 export default function MovieDetailContainer() {
     const { movies } = useContext(LocalDatabaseContext)
@@ -22,8 +22,8 @@ export default function MovieDetailContainer() {
                             <Grid.Row responsiveCol={'true'} >
                                 <ImageSection.FlexFrame>
                                     <Grid.Col size={1} >
-                                        <ImageSection.Title>{filteredMovie.title}</ImageSection.Title>
-                                        <ImageSection.Subtitle><b>Release date:</b>&nbsp;{filteredMovie.release_date}</ImageSection.Subtitle>
+                                        <Typography.TitleLarge>{filteredMovie.title}</Typography.TitleLarge>
+                                        <Typography.BodyLarge><b>Release date:</b>&nbsp;{filteredMovie.release_date}</Typography.BodyLarge>
                                         <Grid.Row>
                                             {filteredMovie.categories.map(item => <Chips key={uuidv4()} >{item}</Chips>)}
                                         </Grid.Row>
@@ -53,7 +53,7 @@ export default function MovieDetailContainer() {
                                 <Heading.Subtitle>Synopsys</Heading.Subtitle>
                             </Grid.Col>
                             <Grid.Col size={2} >
-                                <ImageSection.Subtitle>{filteredMovie.description}</ImageSection.Subtitle>
+                                <Typography.BodyLarge>{filteredMovie.description}</Typography.BodyLarge>
                             </Grid.Col>
                         </Grid.Row>
                         <Grid.Row>

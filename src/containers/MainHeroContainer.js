@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ImageSection, Grid, Button } from '../components'
+import { ImageSection, Grid, Typography } from '../components'
 import axios from 'axios'
 
 export default function MainHeroContainer() {
@@ -28,7 +28,7 @@ export default function MainHeroContainer() {
                     <Grid.Row>
                         <Grid.Col size={1} >
                             <ImageSection.Frame>
-                                <ImageSection.Title>Add Movies,<br/>TV Shows and more.</ImageSection.Title>
+                                <Typography.TitleLarge>Add Movies,<br/>TV Shows and more.</Typography.TitleLarge>
                             </ImageSection.Frame>
                         </Grid.Col>
                     </Grid.Row>

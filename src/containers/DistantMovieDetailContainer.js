@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid'
 import { useParams } from "react-router-dom";
-import { Grid, Heading, Section, ImageSection, Card, Chips, Button } from '../components'
+import { Grid, Heading, Section, ImageSection, Card, Chips, Button, Typography } from '../components'
 
 import axios from 'axios'
 
@@ -45,8 +45,8 @@ export default function DistantMovieDetailContainer() {
                             <Grid.Row responsiveCol={'true'} >
                                 <ImageSection.FlexFrame>
                                     <Grid.Col size={1} >
-                                        <ImageSection.Title>{editMovie.title}</ImageSection.Title>
-                                        <ImageSection.Subtitle><b>Release date:</b>&nbsp;{editMovie.release_date}</ImageSection.Subtitle>
+                                        <Typography.TitleLarge>{editMovie.title}</Typography.TitleLarge>
+                                        <Typography.BodyLarge><b>Release date:</b>&nbsp;{editMovie.release_date}</Typography.BodyLarge>
                                         <Grid.Row>
                                             {editMovie.genres !== undefined &&
                                                 editMovie.genres.map(item => <Chips key={uuidv4()} >{item.name}</Chips>)
