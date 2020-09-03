@@ -11,7 +11,6 @@ export default function Details() {
     // eslint-disable-next-line
     const filteredMovie = movies.filter(movie => movie.id == params.id)[0];
 
-
     console.log(movies)
     return (
         <>

@@ -73,7 +73,7 @@ export default function Add() {
                                         <Card.ContentFrame>
                                         <Card.Row>
                                                 <Card.Title>{item.title}</Card.Title>
-                                                <Button.Light to={'/edit/' + item.id} >✎</Button.Light>
+                                                <Button.Light to={'/tmdb-details/' + item.id} >✎</Button.Light>
                                             </Card.Row>
                                             <Card.Row>
                                                 <Button>Add to my list</Button>
