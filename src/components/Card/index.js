@@ -5,11 +5,16 @@ import {
     ContentFrame,
     Frame,
     Title,
-    Subtitle
+    Subtitle,
+    FixedWidth
 } from './styles/Card'
 
 export default function Card({ children, ...restProps }) {
     return <Container {...restProps} >{children}</Container>
+}
+
+Card.FixedWidth = function CardFixedWidth({ children, ...restProps }) {
+    return <FixedWidth {...restProps} >{children}</FixedWidth>
 }
 
 Card.Frame = function CardGrid({ children, ...restProps }){

@@ -8,9 +8,13 @@ export default function NavigationContainer() {
         <Navbar>
             <Navbar.Frame>
                 <Navbar.Logotype to='/' >MovieBoard</Navbar.Logotype>
-                <Button onClick={() => firebaseApp.auth().signOut()} >
-                Sign out
-                </Button>
+
+                <Navbar.Group>
+                <Button.Link to='/' >My list</Button.Link>
+                <Button.Link to='/add' >Search</Button.Link>
+                <Button onClick={() => firebaseApp.auth().signOut()} >Sign out</Button>
+                </Navbar.Group>
+
             </Navbar.Frame>
         </Navbar>
     )

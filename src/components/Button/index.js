@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, Large, Light } from './styles/Button'
+import { Button, Large, Light, Link } from './styles/Button'
 
 export default function ButtonDefault({ children, ...restProps }) {
     return <Button {...restProps}>{children}</Button>
@@ -12,4 +12,8 @@ ButtonDefault.Large = function ButtonLarge({ children, ...restProps }) {
 
 ButtonDefault.Light = function ButtonLight({ children, ...restProps }) {
     return <Light {...restProps} >{children}</Light>
+}
+
+ButtonDefault.Link = function ButtonLink({ children, ...restProps }) {
+    return <Link {...restProps} >{children}</Link>
 }

@@ -18,18 +18,16 @@ export default function DistantMovieContainer() {
 
     }, []);
 
-
-
-    return (
+    return ( 
         <ImageSection>
             <ImageSection.Overlay />
-            <ImageSection.Media src={distantMovies.backdrop_path}>
+            <ImageSection.Media src={'http://image.tmdb.org/t/p/original' + distantMovies.backdrop_path} responsiveMargin={'true'} >
                 <Grid maxFreeze={'true'} >
                     <Grid.Row>
                         <Grid.Col size={1} >
                             <ImageSection.Frame>
-                                <h1>{distantMovies.title}</h1>
-                                <p>{distantMovies.tagline}</p>
+                                <ImageSection.Title>{distantMovies.title}</ImageSection.Title>
+                                <ImageSection.Subtitle>{distantMovies.tagline}</ImageSection.Subtitle>
                                 <Button.Large href={distantMovies.homepage} target="_blank" rel="noopener noreferrer" >Watch now</Button.Large>
                             </ImageSection.Frame>
                         </Grid.Col>

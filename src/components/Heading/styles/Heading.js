@@ -19,7 +19,7 @@ export const Subtitle = styled.h2`
     font-weight: 800;
     letter-spacing: -1.9px;
 
-    @media(max-width: 813px){
+    @media(max-width: 672px){
         font-size: 2.3rem;
     }
 `;
