@@ -5,7 +5,7 @@ import { Grid, Heading, Section, ImageSection, Card, Chips, Button } from '../co
 
 import axios from 'axios'
 
-export default function DistantMoviesDetailsContainer() {
+export default function DistantMovieDetailContainer() {
     const params = useParams('id')
     const [editMovie, setEditMovie] = useState([])
     const [similarMovies, setSimilarMovies] = useState([])
