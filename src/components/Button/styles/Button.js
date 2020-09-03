@@ -35,15 +35,15 @@ export const Light = styled(ReachRouterLink)`
     font-weight: bold;
     text-decoration: none;
     padding: 13px 19px;
-    background: #0b090a;
+    background: #f3f3f4;
     cursor: pointer;
-    color: #FAFAFA;
+    color: #0b090a;
     border-radius: 8px;
     transition: ease-out .2s;
     width: fit-content;
 
     &:hover {
-        background: #f3f3f4;
+        background: white;
         color: #0b090a;
     }
 `;
