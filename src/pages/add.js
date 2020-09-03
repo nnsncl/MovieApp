@@ -1,9 +1,11 @@
 import React from 'react';
-import { SearchQueryContainer } from '../containers'
+import { SearchQueryContainer, MainHeroContainer, NavigationContainer } from '../containers'
 
 export default function Browse() {
     return (
         <>
+            <NavigationContainer />
+            <MainHeroContainer />
             <SearchQueryContainer />
         </>
     );
