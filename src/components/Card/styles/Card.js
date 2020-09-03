@@ -24,6 +24,12 @@ export const Frame = styled.div`
     }
 `;
 
+export const Row = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`;
+
 export const FixedWidth = styled.div`
     width: 25%;
     margin-right: 23px;
@@ -36,10 +42,20 @@ export const FixedWidth = styled.div`
 
 export const Image = styled.img`
     width: 100%;
+    border-radius: 19px;
 `;
 
 export const ContentFrame = styled.div`
     margin-top: 23px;
+    
+    a {
+        margin-right: 13px;
+        margin-bottom: 13px;
+
+        @media(max-width: 672px) {
+            width: 100%;
+        }
+    }
 `;
 
 export const Title = styled.p`
