@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavigationContainer, MovieDetailContainer } from '../containers'
+import { NavigationContainer, DistantMovieDetailContainer } from '../containers'
 
 export default function TmdbDistant() {
     return (
         <>
             <NavigationContainer />
-            <MovieDetailContainer />
+            <DistantMovieDetailContainer />
         </>
     );
 };

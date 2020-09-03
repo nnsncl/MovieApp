@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid'
-import { NavigationContainer } from '../containers'
 import { useParams } from "react-router-dom";
 import { Grid, Heading, Section, ImageSection, Card, Chips, Button } from '../components'
 
 import axios from 'axios'
 
-export default function Edit() {
+export default function DistantMovieDetailContainer() {
     const params = useParams('id')
     const [editMovie, setEditMovie] = useState([])
     const [similarMovies, setSimilarMovies] = useState([])
@@ -32,14 +31,13 @@ export default function Edit() {
         }
         // eslint-disable-next-line
     }, []);
-    
+
     // const postToLocalDatabase = async () => {
     //     axios.post('http://localhost:3000/movies', JSON.parse(editMovie))
     // }
 
     return (
         <>
-            <NavigationContainer />
             {editMovie !== undefined &&
                 <>
                     <ImageSection.Media src={'http://image.tmdb.org/t/p/original/' + editMovie.backdrop_path}>
