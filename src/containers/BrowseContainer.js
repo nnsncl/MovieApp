@@ -19,7 +19,6 @@ export default function BrowseContainer() {
             <Grid.Row>
                 <Grid.Col size={1} >
                     <Card.Frame>
-
                         {movies.map(item =>
                             <Card.FixedWidth key={item.id} responsiveWide={'true'} >
                                 <Card.Image src={item.poster} alt={item.title} />
