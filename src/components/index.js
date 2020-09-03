@@ -4,4 +4,7 @@ export { default as Heading } from './Heading/index'
 export { default as Card } from './Card/index'
 export { default as Button } from './Button/index'
 export { default as ImageSection } from './ImageSection/index'
-export { default as SearchInput } from './Search/index'
+export { default as SearchInput } from './Search/index' // Need to be inside Input Component
+export { default as Input } from './Input/index'
+export { default as Section } from './Section/index'
+export { default as Chips } from './Chips/index'
