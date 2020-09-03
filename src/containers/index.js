@@ -1,4 +1,5 @@
 export { default as NavigationContainer } from './NavigationContainer'
 export { default as BrowseContainer } from './BrowseContainer'
-export { default as DistantMovieContainer } from './DistantMovieContainer'
+export { default as MainHeroContainer } from './MainHeroContainer'
 export { default as SearchQueryContainer } from './SearchQueryContainer'
+export { default as EditDistantMoviesContainer } from './EditDistantMoviesContainer'
