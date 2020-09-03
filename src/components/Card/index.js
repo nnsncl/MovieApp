@@ -6,7 +6,8 @@ import {
     Frame,
     Title,
     Subtitle,
-    FixedWidth
+    FixedWidth,
+    Row
 } from './styles/Card'
 
 export default function Card({ children, ...restProps }) {
@@ -27,6 +28,10 @@ Card.Image = function CardImage({ src, alt, ...restProps }) {
 
 Card.ContentFrame = function CardContentFrame({ children, ...restProps }) {
     return <ContentFrame {...restProps} >{children}</ContentFrame>
+}
+
+Card.Row = function CardContentRow({ children, ...restProps }) {
+    return <Row {...restProps} >{children}</Row>
 }
 
 Card.Title = function CardTitle({ children, ...restProps }) {
