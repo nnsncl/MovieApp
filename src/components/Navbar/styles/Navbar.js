@@ -6,13 +6,22 @@ export const Container = styled.nav`
     padding: 36px 23px;
     position: fixed;
     z-index: 3;
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(180deg, rgba(11,9,10,1) 0%, rgba(11,9,10,0) 100%);
 `;
 
 export const Frame = styled.div`
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+`;
+
+export const Group = styled.div`
+    display: flex;
+    align-items: center;
+
+    a {
+        margin-right: 36px;
+    }
 `;
 
 export const Logotype = styled(ReachRouterLink)`
@@ -21,6 +30,7 @@ export const Logotype = styled(ReachRouterLink)`
     letter-spacing: -1.3px;
     text-decoration: none;
     color: white;
+    padding-bottom: 17px;
     
     &::after {
         content: '•';
@@ -28,6 +38,13 @@ export const Logotype = styled(ReachRouterLink)`
         margin-left: 3px;
         color: red;
         animation: linear .9s infinite alternate Blink;
+    }
+
+    @media(max-width: 672px) {
+        font-size: 0;
+        &::after {
+        font-size: 5.6rem;
+    }
     }
 
     @keyframes Blink{
@@ -38,4 +55,5 @@ export const Logotype = styled(ReachRouterLink)`
             opacity: 1;
         }
     }
+
 `;
