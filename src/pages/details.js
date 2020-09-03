@@ -32,7 +32,7 @@ export default function Details() {
                                             <Button.Large>Remove from my list</Button.Large>
                                         </Section>
                                     </Grid.Col>
-                                    <Grid.Col size={1} >
+                                    <Grid.Col size={1} breakPoint='md' >
                                         <ImageSection.ThumbContainer>
                                             <img src={filteredMovie.poster} alt={filteredMovie.poster} />
                                         </ImageSection.ThumbContainer>
