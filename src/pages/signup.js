@@ -22,7 +22,7 @@ const SignUp = ({ history }) => {
         }
     }, [history])
 
-    const formValidation = firstName === '' || emailAddress === '' || !emailAddress.includes('@') || password === '' || password.length < 8
+    const formValidation = firstName === '' || emailAddress === '' || !emailAddress.includes('@') || password === '' || password.length < 6
 
     return (
         <Grid maxFreeze={'true'} >
@@ -33,22 +33,25 @@ const SignUp = ({ history }) => {
                     <FormContainer.Form onSubmit={handleSignUp} >
                         <Input.LabelLarge htmlFor='name'>Name</Input.LabelLarge>
                         <Input.Wide
+                            required
                             name='name'
                             type='text'
-                            placeholder='name'
+                            placeholder='Your name'
                             value={firstName}
                             onChange={({ target }) => setFirstName(target.value)}
                         />
                         <Input.LabelLarge htmlFor='email'>Email</Input.LabelLarge>
                         <Input.Wide
+                            required
                             name='email'
                             type='email'
-                            placeholder='Email address'
+                            placeholder='Your Email address'
                             value={emailAddress}
                             onChange={({ target }) => setemailAddress(target.value)}
                         />
                         <Input.LabelLarge htmlFor='password' >Password</Input.LabelLarge>
                         <Input.Wide
+                            required
                             name='password'
                             type='password'
                             placeholder='Password'
