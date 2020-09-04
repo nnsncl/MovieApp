@@ -69,8 +69,6 @@ export default function DistantMovieDetailContainer() {
         // eslint-disable-next-line
     }, [])
 
-    console.log(postToLocalDatabase)
-
     function addNewMovieToLocalDatabase() {
         try {
             axios({

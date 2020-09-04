@@ -29,8 +29,7 @@ export default function MovieDetailContainer() {
                 alert(error.message)
             }
     }
-
-    console.log(filteredMovie)
+    
     return (
         <>
             {filteredMovie !== undefined &&
