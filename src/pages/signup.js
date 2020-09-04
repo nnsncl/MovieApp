@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { withRouter } from 'react-router';
-import { Link } from 'react-router-dom';
 import firebaseApp from '../firebase';
+import { Grid, Typography, Input, Button, FormContainer } from '../components'
 
 const SignUp = ({ history }) => {
     const handleSignUp = useCallback(async event => {
@@ -23,17 +23,25 @@ const SignUp = ({ history }) => {
     }, [history])
 
     return (
-        <div>
-            <h1>Sign Up</h1>
-            <form onSubmit={handleSignUp}>
-                <label htmlFor='email' >Email</label>
-                <input name='email' type='email' placeholder='Email address' />
-                <label htmlFor='password' >Email</label>
-                <input name='password' type='password' placeholder='Password' />
-                <button type='submit' >Sign Up</button>
-            </form>
-            <Link to='/signin' >Sign In</Link>
-        </div>
+        <Grid maxFreeze={'true'} >
+        <Grid.Row>
+            <Grid.Col size={'1'}>
+                <FormContainer>
+                    <Typography.TitleLarge>Sign Up</Typography.TitleLarge>
+                    <FormContainer.Form onSubmit={handleSignUp} >
+                        <Input.LabelLarge htmlFor='name'>Name</Input.LabelLarge>
+                        <Input.Wide name='name' type='text' placeholder='name' />
+                        <Input.LabelLarge htmlFor='email'>Email</Input.LabelLarge>
+                        <Input.Wide name='email' type='email' placeholder='Email address' />
+                        <Input.LabelLarge htmlFor='password' >Password</Input.LabelLarge>
+                        <Input.Wide name='password' type='password' placeholder='Password' />
+                            <Button.Large type='submit' >Sign Up</Button.Large>
+                            <Button.Link to='/signin'>Sign In</Button.Link>
+                    </FormContainer.Form>
+                </FormContainer>
+            </Grid.Col>
+        </Grid.Row>
+    </Grid>
     );
 };
 
