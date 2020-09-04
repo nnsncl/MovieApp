@@ -19,7 +19,7 @@ export const Wide = styled.input`
     transition: opacity .2s;
     opacity: .3;
 
-    &:hover, &:focus {
+    &:hover, &:focus, &:active {
         opacity: 1;
     }
 `;
