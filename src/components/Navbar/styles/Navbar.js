@@ -21,6 +21,10 @@ export const Group = styled.div`
 
     a {
         margin-right: 36px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
     }
 `;
 

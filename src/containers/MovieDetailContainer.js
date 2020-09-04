@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { LocalDatabaseContext } from '../constant/LocalDababase'
 import { v4 as uuidv4 } from 'uuid'
 import { useParams } from "react-router-dom";
+import axios from 'axios'
 import { Grid, Heading, Section, ImageSection, Card, Chips, Button, Typography, ModalContainer } from '../components'
 import useModal from 'use-react-modal'
 
@@ -20,7 +21,16 @@ export default function MovieDetailContainer() {
             closeOnEsc: true,
         })
 
-    console.log(movies)
+    const addAndRelocate = () => {
+            try {
+                axios.delete(`http://localhost:3000/movies/${params.id}`)
+                document.location.replace('/')
+            } catch(error){
+                alert(error.message)
+            }
+    }
+
+    console.log(filteredMovie)
     return (
         <>
             {filteredMovie !== undefined &&
@@ -35,7 +45,7 @@ export default function MovieDetailContainer() {
                                 <Typography.BodyLarge>You're about to delete <strong>{filteredMovie.title}</strong> from your list</Typography.BodyLarge>
                                 <ModalContainer.FlexFrame>
                                     <Button onClick={closeModal}>Cancel</Button>
-                                    {/* <Button.Light>Yes, delete</Button.Light> */}
+                                    <Button.Light onClick={() => addAndRelocate()} >Yes, delete</Button.Light>
                                 </ModalContainer.FlexFrame>
                             </ModalContainer>
                         </Modal>
