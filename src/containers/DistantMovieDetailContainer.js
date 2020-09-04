@@ -72,11 +72,16 @@ export default function DistantMovieDetailContainer() {
     console.log(postToLocalDatabase)
 
     function addNewMovieToLocalDatabase() {
-        axios({
-            method: 'post',
-            url: 'http://localhost:3000/movies',
-            data: postToLocalDatabase
-        })
+        try {
+            axios({
+                method: 'post',
+                url: 'http://localhost:3000/movies',
+                data: postToLocalDatabase
+            })
+            document.location.replace('/')
+        } catch(error) {
+            alert(error.message)
+        }
     }
 
     return (
@@ -96,7 +101,7 @@ export default function DistantMovieDetailContainer() {
                                             }
                                         </Grid.Row>
                                         <Section>
-                                            <Button.Large onClick={addNewMovieToLocalDatabase} >Add to my list</Button.Large>
+                                            <Button.Large onClick={() => addNewMovieToLocalDatabase()} >Add to my list</Button.Large>
                                         </Section>
                                     </Grid.Col>
                                     <Grid.Col size={1} breakPoint='md' >

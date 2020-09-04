@@ -15,9 +15,9 @@ export default function App() {
             <PrivateRoute exact path='/' component={Browse} />
             <Route exact path='/signin' component={SignIn} />
             <Route exact path='/signup' component={SignUp} />
-            <Route exact path='/tmdb-details/:id' component={TmdbMovieDetail} />
-            <Route exact path='/details/:id' component={MovieDetails} />
-            <Route exact path='/add' component={Add} />
+            <PrivateRoute exact path='/tmdb-details/:id' component={TmdbMovieDetail} />
+            <PrivateRoute exact path='/details/:id' component={MovieDetails} />
+            <PrivateRoute exact path='/add' component={Add} />
           </div>
         </Router>
       </LocalDatabaseProvider>
