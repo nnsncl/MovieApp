@@ -10,7 +10,8 @@ import {
     Card,
     Chips,
     Button,
-    Typography } from '../components'
+    Typography
+} from '../components'
 
 export default function DistantMovieDetailContainer() {
     const params = useParams('id')
@@ -18,7 +19,7 @@ export default function DistantMovieDetailContainer() {
     const [similarMovies, setSimilarMovies] = useState([])
     const [castDetails, setCastDetails] = useState([])
     const [postToLocalDatabase, setPostToLocalDatabase] = useState({})
-    
+
     useEffect(() => {
         try {
             const fetchDistantData = async () => {
@@ -30,34 +31,36 @@ export default function DistantMovieDetailContainer() {
                 setCastDetails(getCastDetails.data.cast);
                 setSimilarMovies(getMovieDetails.data.results);
 
-                setPostToLocalDatabase({
-                    title: `${getMovieById.data.title}`,
-                    release_date: `${getMovieById.data.release_date}`,
-                    categories: getMovieById.data.genres.map(item => `${item.name.split(',')}`),
-                    description: getMovieById.data.overview,
-                    poster: getMovieById.data.poster_path,
-                    backdrop: getMovieById.data.backdrop_path,
-                    actors: getCastDetails.data.cast.map(item =>
-                        (
-                            {
-                                name: `${item.name}`,
-                                photo: `${item.profile_path}`,
-                                character: `${item.character}`,
-                            }
+                setPostToLocalDatabase(
+                    {
+                        title: `${getMovieById.data.title}`,
+                        release_date: `${getMovieById.data.release_date}`,
+                        categories: getMovieById.data.genres.map(item => `${item.name}`),
+                        description: getMovieById.data.overview,
+                        poster: 'http://image.tmdb.org/t/p/original/' + getMovieById.data.poster_path,
+                        backdrop: 'http://image.tmdb.org/t/p/original/' + getMovieById.data.backdrop_path,
+                        actors: getCastDetails.data.cast.slice(0, 10).map(item =>
+                            (
+                                {
+                                    name: `${item.name}`,
+                                    photo: `http://image.tmdb.org/t/p/original/${item.profile_path}`,
+                                    character: `${item.character}`,
+                                }
+                            )
+                        ),
+                        similar_movies: getMovieDetails.data.results.map(item =>
+                            (
+                                {
+                                    title: `${item.title}`,
+                                    poster: `http://image.tmdb.org/t/p/original/${item.poster_path}`,
+                                    release_date: `${item.release_date}`,
+                                }
+                            )
                         )
-                    ),
-                    similar_movies: getMovieDetails.data.results.map(item =>
-                        (
-                            {
-                                title: `${item.title}`,
-                                poster: `${item.poster_path}`,
-                                release_date: `${item.release_date}`,
-                            }
-                        )
-                    )
-                })
+                    }
+                )
             }
-            
+
             fetchDistantData();
 
         } catch (error) {
@@ -67,12 +70,14 @@ export default function DistantMovieDetailContainer() {
     }, [])
 
     console.log(postToLocalDatabase)
- 
 
-    // useState = {' name = editMovie.name '}
-    // const postToLocalDatabase = async () => {
-    //     axios.post('http://localhost:3000/movies', JSON.parse(postToLocal))
-    // }
+    function addNewMovieToLocalDatabase() {
+        axios({
+            method: 'post',
+            url: 'http://localhost:3000/movies',
+            data: postToLocalDatabase
+        })
+    }
 
     return (
         <>
@@ -91,7 +96,7 @@ export default function DistantMovieDetailContainer() {
                                             }
                                         </Grid.Row>
                                         <Section>
-                                            <Button.Large>Add to my list</Button.Large>
+                                            <Button.Large onClick={addNewMovieToLocalDatabase} >Add to my list</Button.Large>
                                         </Section>
                                     </Grid.Col>
                                     <Grid.Col size={1} breakPoint='md' >
