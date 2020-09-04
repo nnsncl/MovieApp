@@ -112,8 +112,8 @@ export default function DistantMovieDetailContainer() {
                                                     <Card.Image src={'http://image.tmdb.org/t/p/w342/' + item.poster_path} alt={item.title} />
                                                 }
                                                 <Card.ContentFrame>
-                                                    <Typography.TitleSm>{item.name}</Typography.TitleSm>
-                                                    <Typography.Body>{item.character}</Typography.Body>
+                                                    <Typography.TitleSm>{item.title}</Typography.TitleSm>
+                                                    <Typography.Body>{item.release_date}</Typography.Body>
                                                 </Card.ContentFrame>
                                             </Card.FixedWidth>
                                         )}
