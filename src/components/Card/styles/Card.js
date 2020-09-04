@@ -37,7 +37,6 @@ export const Row = styled.div`
 
 export const FixedWidth = styled.div`
     width: 29%;
-    margin-right: 23px;
     margin-bottom: 23px;
 
     @media(max-width: 672px){
