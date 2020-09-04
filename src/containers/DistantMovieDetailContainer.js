@@ -46,7 +46,7 @@ export default function DistantMovieDetailContainer() {
                                 <ImageSection.FlexFrame>
                                     <Grid.Col size={1} >
                                         <Typography.TitleLarge>{editMovie.title}</Typography.TitleLarge>
-                                        <Typography.BodyLarge><b>Release date:</b>&nbsp;{editMovie.release_date}</Typography.BodyLarge>
+                                        <Typography.BodyLarge><strong>Release date:</strong>&nbsp;{editMovie.release_date}</Typography.BodyLarge>
                                         <Grid.Row>
                                             {editMovie.genres !== undefined &&
                                                 editMovie.genres.map(item => <Chips key={uuidv4()} >{item.name}</Chips>)

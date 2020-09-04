@@ -9,3 +9,4 @@ export { default as SearchInput } from './Search/index' // Need to be inside Inp
 export { default as Input } from './Input/index'
 export { default as Section } from './Section/index'
 export { default as Chips } from './Chips/index'
+export { default as ModalContainer } from './Modal/index'
