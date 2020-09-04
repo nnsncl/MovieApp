@@ -5,22 +5,39 @@ export const Container = styled.div`
     flex-direction: column;
 `;
 export const FieldContainer = styled.div`
-    padding: 95px 0 0 0;
+    z-index: 2;
+    margin-top: -190px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: white;
+    padding: 19px 23px;
+    border-radius: 8px;
+
+    @media(max-width: 1280px){
+        margin-top: 0;
+    }
+
+    svg {
+        margin-right: 23px;
+    }
 `;
-export const SearchButton = styled.button``;
 export const Field = styled.input`
-    font-size: 5.6rem;
+    font-size: 3.6rem;
     border: 0;
     background: transparent;
-    color: white;
+    color: #0b090a;
     outline: none;
-    margin: 9px 0 23px 0;
     transition: opacity .2s;
     opacity: .3;
     width: 100%;
 
-    &:hover, &:focus {
+    &:hover, &:focus, &:active {
         opacity: 1;
+    }
+
+    @media(max-width: 1056px) {
+        font-size: 2.3rem;
     }
 `;
 export const Label = styled.label`

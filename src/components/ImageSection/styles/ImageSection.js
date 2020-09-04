@@ -5,25 +5,6 @@ export const Container = styled.div`
     flex-direction: column;
 `;
 
-export const Title = styled.h1`
-    font-size: 9.5rem;
-    margin-bottom: 9px;
-
-    @media(max-width: 1056px){
-        font-size: 3.6rem;
-        margin-bottom: 23px;
-    }
-
-`;
-
-export const Subtitle = styled.p`
-    font-size: 2.3rem;
-    margin-bottom: 36px;
-
-    @media(max-width: 1056px){
-        font-size: 1.6rem;
-    }
-`;
 
 export const Frame = styled.div`
     position: absolute;
@@ -41,32 +22,15 @@ export const FlexFrame = styled.div`
 
 export const Media = styled.div`
     width: 100%;
-    min-height: 75vh;
-    background: url(${({ src }) => (src && `${src}`)}) bottom center / cover no-repeat;
-    margin-bottom: 95px;
-
-    @media(max-width: 672px){
-        min-height: 50vh;
-        margin-bottom: ${(restProps) => restProps.responsiveMargin === 'true' && (`190px`)};
-    }
-
-    @media(max-width: 641px){
-        min-height: 66.6vh;
-    }
+    min-height: 66.6vh;
+    background: url(${({ src }) => (src && `${src}`)}) top center / cover no-repeat;
 `;
 
 export const Overlay = styled.div`
     width: 100%;
-    min-height: 75vh;
-    background: linear-gradient(0deg, rgba(11,9,10,1) 0%, rgba(11,9,11,0) 166.6%);
+    min-height: 66.6vh;
+    background: linear-gradient(0deg, rgba(11,9,10,1) 3%, rgba(11,9,11,0) 100%);
     position: absolute;
-
-    @media(max-width: 672px){
-        min-height: 50vh;
-    }
-    @media(max-width: 641px){
-        min-height: 66.6vh;
-    }
 `;
 
 

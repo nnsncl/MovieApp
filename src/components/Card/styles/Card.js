@@ -27,16 +27,20 @@ export const Frame = styled.div`
 export const Row = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    padding: 13px 0;
+    ${(restProps) => restProps.spaceBetween === 'true' ?
+        (`justify-content: space-between;`)
+    :   (`a { margin-right: 13px; }`)
+    }
 `;
 
 export const FixedWidth = styled.div`
-    width: 25%;
+    width: 29%;
     margin-right: 23px;
     margin-bottom: 23px;
 
-    @media(max-width: 641px) {
-        width: 42%;
+    @media(max-width: 672px){
+        width: ${(restProps) => restProps.responsiveWide === 'true' ? (`100%;`) : (`42%`)};
     }
 `;
 
@@ -47,24 +51,4 @@ export const Image = styled.img`
 
 export const ContentFrame = styled.div`
     margin-top: 23px;
-    
-    a {
-        margin-right: 13px;
-        margin-bottom: 13px;
-
-        @media(max-width: 672px) {
-            width: 100%;
-        }
-    }
-`;
-
-export const Title = styled.p`
-    font-size: 2.3rem;
-    font-weight: 600;
-    margin: 13px 0 9px 0;
-`;
-
-export const Subtitle = styled.p`
-    font-size: 1.3rem;
-    font-weight: 600;
 `;

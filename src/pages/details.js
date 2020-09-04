@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer, MovieDetailContainer } from '../containers'
 
-export default function TmdbDistant() {
+export default function MovieDetail() {
     return (
         <>
             <NavigationContainer />

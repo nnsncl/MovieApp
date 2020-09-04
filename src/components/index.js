@@ -1,4 +1,5 @@
 export { default as Grid } from './Grid/index'
+export { default as Typography } from './Typography/index'
 export { default as Navbar } from './Navbar/index'
 export { default as Heading } from './Heading/index'
 export { default as Card } from './Card/index'
@@ -8,3 +9,5 @@ export { default as SearchInput } from './Search/index' // Need to be inside Inp
 export { default as Input } from './Input/index'
 export { default as Section } from './Section/index'
 export { default as Chips } from './Chips/index'
+export { default as ModalContainer } from './Modal/index'
+export { default as FormContainer } from './Form/index'

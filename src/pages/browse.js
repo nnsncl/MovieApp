@@ -4,9 +4,9 @@ import { NavigationContainer, BrowseContainer, MainHeroContainer } from '../cont
 export default function Browse() {
     return (
         <>
-        <NavigationContainer />
-        <MainHeroContainer />
-        <BrowseContainer />
+            <NavigationContainer />
+            <MainHeroContainer />
+            <BrowseContainer />
         </>
     );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid'
 import { useParams } from "react-router-dom";
-import { Grid, Heading, Section, ImageSection, Card, Chips, Button } from '../components'
+import { Grid, Heading, Section, ImageSection, Card, Chips, Button, Typography } from '../components'
 
 import axios from 'axios'
 
@@ -45,8 +45,8 @@ export default function DistantMovieDetailContainer() {
                             <Grid.Row responsiveCol={'true'} >
                                 <ImageSection.FlexFrame>
                                     <Grid.Col size={1} >
-                                        <ImageSection.Title>{editMovie.title}</ImageSection.Title>
-                                        <ImageSection.Subtitle><b>Release date:</b>&nbsp;{editMovie.release_date}</ImageSection.Subtitle>
+                                        <Typography.TitleLarge>{editMovie.title}</Typography.TitleLarge>
+                                        <Typography.BodyLarge><strong>Release date:</strong>&nbsp;{editMovie.release_date}</Typography.BodyLarge>
                                         <Grid.Row>
                                             {editMovie.genres !== undefined &&
                                                 editMovie.genres.map(item => <Chips key={uuidv4()} >{item.name}</Chips>)
@@ -66,18 +66,21 @@ export default function DistantMovieDetailContainer() {
                         </Grid>
                     </ImageSection.Media>
                     <Grid maxFreeze={'true'} >
-                        <Grid.Row responsiveCol={'true'} >
-                            <Grid.Col size={1} >
-                                <Heading.Subtitle>Synopsys</Heading.Subtitle>
-                            </Grid.Col>
-                            <Grid.Col size={2} >
-                                <ImageSection.Subtitle>{editMovie.overview}</ImageSection.Subtitle>
-                            </Grid.Col>
-                        </Grid.Row>
+                        <Heading.Padded>
+                            <Grid.Row responsiveCol={'true'} >
+                                <Grid.Col size={1} >
+                                    <Typography.TitleMd>Resume</Typography.TitleMd>
+                                </Grid.Col>
+                                <Grid.Col size={2} >
+                                    <Typography.BodyLarge>{editMovie.overview}</Typography.BodyLarge>
+                                </Grid.Col>
+                            </Grid.Row>
+                        </Heading.Padded>
+
                         <Grid.Row>
                             <Grid.Col size={1} >
                                 <Heading>
-                                    <Heading.Subtitle>Actors list</Heading.Subtitle>
+                                    <Typography.TitleMd>Actors list</Typography.TitleMd>
                                 </Heading>
                                 <Section>
                                     <Section.Frame>
@@ -88,8 +91,8 @@ export default function DistantMovieDetailContainer() {
                                                     <Card.Image src={'http://image.tmdb.org/t/p/w342/' + item.profile_path} alt={item.name} />
                                                 }
                                                 <Card.ContentFrame>
-                                                    <Card.Title>{item.name}</Card.Title>
-                                                    <Card.Subtitle>{item.character}</Card.Subtitle>
+                                                    <Typography.TitleSm>{item.name}</Typography.TitleSm>
+                                                    <Typography.Body>{item.character}</Typography.Body>
                                                 </Card.ContentFrame>
                                             </Card.FixedWidth>
                                         )}
@@ -101,7 +104,7 @@ export default function DistantMovieDetailContainer() {
                         <Grid.Row>
                             <Grid.Col>
                                 <Heading>
-                                    <Heading.Subtitle>Similar Movies</Heading.Subtitle>
+                                    <Typography.TitleMd>Similar Movies</Typography.TitleMd>
                                 </Heading>
                                 <Section>
                                     <Section.Frame>
@@ -112,8 +115,8 @@ export default function DistantMovieDetailContainer() {
                                                     <Card.Image src={'http://image.tmdb.org/t/p/w342/' + item.poster_path} alt={item.title} />
                                                 }
                                                 <Card.ContentFrame>
-                                                    <Card.Title>{item.title}</Card.Title>
-                                                    <Card.Subtitle>{item.release_date}</Card.Subtitle>
+                                                    <Typography.TitleSm>{item.title}</Typography.TitleSm>
+                                                    <Typography.Body>{item.release_date}</Typography.Body>
                                                 </Card.ContentFrame>
                                             </Card.FixedWidth>
                                         )}

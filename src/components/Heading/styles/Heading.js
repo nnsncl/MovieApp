@@ -11,14 +11,6 @@ export const Flex = styled.div`
     align-items: center;
 `;
 
-export const Title = styled.h1``;
-
-export const Subtitle = styled.h2`
-    font-size: 5.6rem;
-    font-weight: 800;
-    letter-spacing: -1.9px;
-
-    @media(max-width: 672px){
-        font-size: 2.3rem;
-    }
+export const Padded = styled.div`
+    padding: 56px 0;
 `;
