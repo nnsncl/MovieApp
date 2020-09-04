@@ -11,13 +11,13 @@ export default function NavigationContainer() {
                 <Navbar.Group>
                     <Button.Link to='/' >My list</Button.Link>
                     <Button.Link to='/add' >Search</Button.Link>
-                    <Button onClick={() => firebaseApp.auth().signOut()} >
+                    <Button.Light to='/' onClick={() => firebaseApp.auth().signOut()} >
                         <svg aria-hidden="true" height="19px" width="19px" transform="rotate(360)" viewBox="0 0 512 512">
                             <defs />
-                            <path fill="#f3f3f4" d="M256 464c-114.69 0-208-93.47-208-208.35 0-62.45 27.25-121 74.76-160.55a22 22 0 1128.17 33.8C113.48 160.1 92 206.3 92 255.65 92 346.27 165.57 420 256 420s164-73.73 164-164.35A164 164 0 00360.17 129a22 22 0 1128-33.92A207.88 207.88 0 01464 255.65C464 370.53 370.69 464 256 464z" />
-                            <path fill="#ffff" d="M256 272a22 22 0 01-22-22V70a22 22 0 0144 0v180a22 22 0 01-22 22z" />
+                            <path fill="black" d="M256 464c-114.69 0-208-93.47-208-208.35 0-62.45 27.25-121 74.76-160.55a22 22 0 1128.17 33.8C113.48 160.1 92 206.3 92 255.65 92 346.27 165.57 420 256 420s164-73.73 164-164.35A164 164 0 00360.17 129a22 22 0 1128-33.92A207.88 207.88 0 01464 255.65C464 370.53 370.69 464 256 464z" />
+                            <path fill="black" d="M256 272a22 22 0 01-22-22V70a22 22 0 0144 0v180a22 22 0 01-22 22z" />
                         </svg>
-                    </Button>
+                    </Button.Light>
                 </Navbar.Group>
             </Navbar.Frame>
         </Navbar>

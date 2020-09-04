@@ -11,7 +11,7 @@ export default function SearchQueryContainer() {
 
     useEffect(() => {
 
-        if (query.length > 0) {
+        if (query.length > 2) {
             const fetchDistantData = async () => {
                 const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&query=${query}&page=1&include_adult=false`);
                 setDistantMovies(response.data.results);
@@ -29,23 +29,14 @@ export default function SearchQueryContainer() {
         }
 
         const queryFuse = new Fuse(distantMovies, queryOptions)
+        // eslint-disable-next-line
         const queryResults = queryFuse.search(query)
 
-        console.log(queryResults)
         // eslint-disable-next-line
     }, [query])
 
     return (
         <>
-            {/* <SearchInput>
-                <SearchInput.Field
-                    type='text'
-                    query={query}
-                    setQuery={setQuery}
-                    placeholder='Search a movie...'
-                />
-            </SearchInput> */}
-                <>
                     <Grid maxFreeze={'true'} >
                         <Grid.Row>
                             <Grid.Col size={1}>
@@ -99,7 +90,5 @@ export default function SearchQueryContainer() {
                     </Grid>
 
                 </>
-            
-        </>
     );
 };

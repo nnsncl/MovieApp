@@ -1,39 +1,77 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid'
 import { useParams } from "react-router-dom";
-import { Grid, Heading, Section, ImageSection, Card, Chips, Button, Typography } from '../components'
-
 import axios from 'axios'
+import {
+    Grid,
+    Heading,
+    Section,
+    ImageSection,
+    Card,
+    Chips,
+    Button,
+    Typography } from '../components'
 
 export default function DistantMovieDetailContainer() {
     const params = useParams('id')
     const [editMovie, setEditMovie] = useState([])
     const [similarMovies, setSimilarMovies] = useState([])
     const [castDetails, setCastDetails] = useState([])
-    // eslint-disable-next-line
-
+    const [postToLocalDatabase, setPostToLocalDatabase] = useState({})
+    
     useEffect(() => {
         try {
             const fetchDistantData = async () => {
                 const getMovieById = await axios.get(`https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.REACT_APP_TMDB_KEY}`);
-                setEditMovie(getMovieById.data);
-
+                const getCastDetails = await axios.get(`https://api.themoviedb.org/3/movie/${params.id}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}`);
                 const getMovieDetails = await axios.get(`https://api.themoviedb.org/3/movie/${params.id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}&page=1`);
+
+                setEditMovie(getMovieById.data);
+                setCastDetails(getCastDetails.data.cast);
                 setSimilarMovies(getMovieDetails.data.results);
 
-                const getCastDetails = await axios.get(`https://api.themoviedb.org/3/movie/${params.id}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}`);
-                setCastDetails(getCastDetails.data.cast);
+                setPostToLocalDatabase({
+                    title: `${getMovieById.data.title}`,
+                    release_date: `${getMovieById.data.release_date}`,
+                    categories: getMovieById.data.genres.map(item => `${item.name.split(',')}`),
+                    description: getMovieById.data.overview,
+                    poster: getMovieById.data.poster_path,
+                    backdrop: getMovieById.data.backdrop_path,
+                    actors: getCastDetails.data.cast.map(item =>
+                        (
+                            {
+                                name: `${item.name}`,
+                                photo: `${item.profile_path}`,
+                                character: `${item.character}`,
+                            }
+                        )
+                    ),
+                    similar_movies: getMovieDetails.data.results.map(item =>
+                        (
+                            {
+                                title: `${item.title}`,
+                                poster: `${item.poster_path}`,
+                                release_date: `${item.release_date}`,
+                            }
+                        )
+                    )
+                })
             }
+            
             fetchDistantData();
 
         } catch (error) {
             alert(error.message)
         }
         // eslint-disable-next-line
-    }, []);
+    }, [])
 
+    console.log(postToLocalDatabase)
+ 
+
+    // useState = {' name = editMovie.name '}
     // const postToLocalDatabase = async () => {
-    //     axios.post('http://localhost:3000/movies', JSON.parse(editMovie))
+    //     axios.post('http://localhost:3000/movies', JSON.parse(postToLocal))
     // }
 
     return (
