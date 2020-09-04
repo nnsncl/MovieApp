@@ -29,7 +29,7 @@ export default function MovieDetailContainer() {
                         <Modal>
                             <ModalContainer>
                                 <ModalContainer.Header>
-                                    <button onClick={closeModal}>close</button>
+                                    <Button onClick={closeModal}>close</Button>
                                 </ModalContainer.Header>
                                 <Typography.TitleSm>Warning</Typography.TitleSm>
                                 <Typography.BodyLarge>You're about to delete <strong>{filteredMovie.title}</strong> from your list</Typography.BodyLarge>
@@ -81,7 +81,6 @@ export default function MovieDetailContainer() {
                                 </Grid.Col>
                             </Grid.Row>
                         </Heading.Padded>
-
                         <Grid.Row>
                             <Grid.Col size={1} >
                                 <Heading>
