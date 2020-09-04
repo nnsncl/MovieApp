@@ -10,7 +10,7 @@ ImageSection.FlexFrame = function ImageSectionFlexFrame({ children, ...restProps
 }
 
 ImageSection.Frame = function ImageSectionFrame({ children, ...restProps}){
-    return <Frame { ...restProps } >{children}</Frame>
+    return <Frame initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .1, ease: "easeOut", duration: 0.5 }} { ...restProps } >{children}</Frame>
 }
 
 ImageSection.ThumbContainer = function ImageSectionThumbContainer({ children, ...restProps }) {

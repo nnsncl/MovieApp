@@ -14,6 +14,9 @@ export const Button = styled.button`
     padding: 13px 19px;
     background: #D00000;
     border-radius: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     transition: background .2s;
 
     &:hover {
@@ -30,7 +33,9 @@ export const Large = styled(Button)`
 `;
 
 export const Light = styled(ReachRouterLink)`
-    display: block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     appearance: none;
     letter-spacing: -.9px;
     outline: none;
@@ -53,7 +58,9 @@ export const Light = styled(ReachRouterLink)`
 `;
 
 export const Link = styled(ReachRouterLink)`
-    display: block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     appearance: none;
     letter-spacing: -.9px;
     outline: none;

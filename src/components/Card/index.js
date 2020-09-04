@@ -21,7 +21,7 @@ Card.Frame = function CardGrid({ children, ...restProps }){
 }
 
 Card.Image = function CardImage({ src, alt, ...restProps }) {
-    return <Image src={src} alt={alt} { ...restProps } />
+    return <Image initial={{ opacity: 0, scale: .9 }} animate={{ delay: .3, ease: "easeOut", duration: 1, opacity: 1, scale: 1 }} src={src} alt={alt} { ...restProps } />
 }
 
 Card.ContentFrame = function CardContentFrame({ children, ...restProps }) {

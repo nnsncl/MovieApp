@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from "framer-motion"
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
     margin: 25% auto;
     max-width: 414px;
 
@@ -9,7 +10,7 @@ export const Container = styled.div`
     }
 `;
 
-export const Form = styled.form`
+export const Form = styled(motion.form)`
     display: flex;
     flex-direction: column;
 
@@ -18,7 +19,7 @@ export const Form = styled.form`
     }
 `;
 
-export const FlexFrame = styled.div`
+export const FlexFrame = styled(motion.div)`
     display: flex;
     flex-direction: row;
     justify-content: space-between;

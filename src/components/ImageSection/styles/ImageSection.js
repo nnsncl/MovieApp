@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const Container = styled.div`
     display: flex;
@@ -6,7 +7,7 @@ export const Container = styled.div`
 `;
 
 
-export const Frame = styled.div`
+export const Frame = styled(motion.div)`
     position: absolute;
     z-index: 2;
     max-width: 66.6%;

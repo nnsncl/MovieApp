@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
 `;
-export const FieldContainer = styled.div`
+export const FieldContainer = styled(motion.div)`
     z-index: 2;
     margin-top: -190px;
     display: flex;
