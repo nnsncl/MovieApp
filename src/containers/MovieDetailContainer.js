@@ -71,14 +71,17 @@ export default function MovieDetailContainer() {
                         </Grid>
                     </ImageSection.Media>
                     <Grid maxFreeze={'true'} >
-                        <Grid.Row responsiveCol={'true'} >
-                            <Grid.Col size={1} >
-                                <Typography.TitleMd>Resume</Typography.TitleMd>
-                            </Grid.Col>
-                            <Grid.Col size={2} >
-                                <Typography.BodyLarge>{filteredMovie.description}</Typography.BodyLarge>
-                            </Grid.Col>
-                        </Grid.Row>
+                        <Heading.Padded>
+                            <Grid.Row responsiveCol={'true'} >
+                                <Grid.Col size={1} >
+                                    <Typography.TitleMd>Resume</Typography.TitleMd>
+                                </Grid.Col>
+                                <Grid.Col size={2} >
+                                    <Typography.BodyLarge>{filteredMovie.description}</Typography.BodyLarge>
+                                </Grid.Col>
+                            </Grid.Row>
+                        </Heading.Padded>
+
                         <Grid.Row>
                             <Grid.Col size={1} >
                                 <Heading>
