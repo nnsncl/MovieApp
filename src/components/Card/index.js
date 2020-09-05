@@ -21,7 +21,7 @@ Card.Frame = function CardGrid({ children, ...restProps }){
 }
 
 Card.Image = function CardImage({ src, alt, ...restProps }) {
-    return <Image initial={{ scale: 1, opacity: 0 }} animate={{ duration: 3, opacity: 1 }} whileHover={{ scale: 1.1 }}  src={src} alt={alt} { ...restProps } />
+    return <Image initial={{ opacity: 0 }} animate={{ duration: 3, opacity: 1 }} src={src} alt={alt} { ...restProps } />
 }
 
 Card.ContentFrame = function CardContentFrame({ children, ...restProps }) {
