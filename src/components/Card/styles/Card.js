@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const Container = styled.div`
     margin-right: 13px;
@@ -34,9 +35,8 @@ export const Row = styled.div`
     }
 `;
 
-export const FixedWidth = styled.div`
+export const FixedWidth = styled(motion.div)`
     width: 29%;
-    margin-right: 23px;
     margin-bottom: 23px;
 
     @media(max-width: 672px){
@@ -44,7 +44,7 @@ export const FixedWidth = styled.div`
     }
 `;
 
-export const Image = styled.img`
+export const Image = styled(motion.img)`
     width: 100%;
     border-radius: 19px;
 `;

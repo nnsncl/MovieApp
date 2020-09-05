@@ -11,7 +11,6 @@ export const LocalDatabaseProvider = ({ children }) => {
             const fetchData = async () => {
                 const response = await axios.get('http://localhost:3000/movies');
                 setMovies(response.data);
-                // console.log(response.data)
             }
             fetchData();
 

@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
     "firebase": "^7.19.1",
+    "framer-motion": "^2.6.6",
     "fuse": "^0.4.0",
     "fuse.js": "^6.4.1",
     "react": "^16.13.1",

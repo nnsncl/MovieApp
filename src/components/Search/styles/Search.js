@@ -1,12 +1,13 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
 `;
-export const FieldContainer = styled.div`
+export const FieldContainer = styled(motion.div)`
     z-index: 2;
-    margin-top: -190px;
+    margin-top: -121px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -15,7 +16,7 @@ export const FieldContainer = styled.div`
     border-radius: 8px;
 
     @media(max-width: 1280px){
-        margin-top: 0;
+        margin-top: 36px;
     }
 
     svg {

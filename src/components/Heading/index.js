@@ -6,9 +6,9 @@ export default function HeadingSection({ children, ...restProps }){
 }
 
 HeadingSection.Padded = function HeadeingSectionPadded({ children, ...restProps }) {
-    return <Padded { ...restProps }>{children}</Padded>
+    return <Padded initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .3, ease: "easeInOut", duration: 0.5 }} { ...restProps }>{children}</Padded>
 }
 
 HeadingSection.Flex = function HeadingSectionFlex({ children, ...restProps }) {
-    return <Flex { ...restProps }>{children}</Flex>
+    return <Flex initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .3, ease: "easeInOut", duration: 0.5 }} { ...restProps }>{children}</Flex>
 }

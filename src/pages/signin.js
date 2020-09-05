@@ -1,10 +1,13 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useState, useCallback, useContext } from 'react';
 import { withRouter, Redirect } from 'react-router';
 import firebaseApp from '../firebase';
 import { AuthContext } from '../auth/Auth';
 import { Grid, Typography, Input, Button, FormContainer } from '../components'
 
 const SignIn = ({ history }) => {
+    const [emailAddress, setemailAddress] = useState('')
+    const [password, setPaswword] = useState('')
+
     const handleSignIn = useCallback(
         async event => {
             event.preventDefault();
@@ -28,6 +31,8 @@ const SignIn = ({ history }) => {
         return <Redirect to='/' />;
     }
 
+    const formValidation = emailAddress === '' || !emailAddress.includes('@') || password === '' || password.length < 6
+
     return (
         <Grid maxFreeze={'true'} >
             <Grid.Row>
@@ -36,10 +41,24 @@ const SignIn = ({ history }) => {
                         <Typography.TitleLarge>Sign In</Typography.TitleLarge>
                         <FormContainer.Form onSubmit={handleSignIn} >
                             <Input.LabelLarge htmlFor='email'>Email</Input.LabelLarge>
-                            <Input.Wide name='email' type='email' placeholder='Email address' />
+                            <Input.Wide
+                                required
+                                name='email'
+                                type='email'
+                                placeholder='Email address'
+                                value={emailAddress}
+                                onChange={({ target }) => setemailAddress(target.value)}
+                                />
                             <Input.LabelLarge htmlFor='password' >Password</Input.LabelLarge>
-                            <Input.Wide name='password' type='password' placeholder='Password' />
-                                <Button.Large type='submit' >Sign In</Button.Large>
+                            <Input.Wide
+                                required
+                                name='password'
+                                type='password'
+                                placeholder='Password'
+                                value={password}
+                                onChange={({ target }) => setPaswword(target.value)}
+                            />
+                                <Button.Large type='submit' disabled={formValidation} >Sign In</Button.Large>
                                 <Button.Link to='/signup'>Sign Up</Button.Link>
                         </FormContainer.Form>
                     </FormContainer>
