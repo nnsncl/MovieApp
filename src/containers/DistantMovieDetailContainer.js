@@ -71,7 +71,7 @@ export default function DistantMovieDetailContainer() {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-    },[])
+    }, [])
 
     function addNewMovieToLocalDatabase() {
         try {
@@ -81,7 +81,7 @@ export default function DistantMovieDetailContainer() {
                 data: postToLocalDatabase
             })
             document.location.replace('/')
-        } catch(error) {
+        } catch (error) {
             alert(error.message)
         }
     }
@@ -90,7 +90,9 @@ export default function DistantMovieDetailContainer() {
         <>
             {editMovie !== undefined &&
                 <>
-                    <ImageSection.Media src={'http://image.tmdb.org/t/p/original/' + editMovie.backdrop_path}>
+                { editMovie.backdrop_path === null || editMovie.backdrop_path === undefined
+                    ? ''
+                    : <ImageSection.Media src={'http://image.tmdb.org/t/p/original/' + editMovie.backdrop_path}>
                         <Grid maxFreeze={'true'} >
                             <Grid.Row responsiveCol={'true'} >
                                 <ImageSection.FlexFrame>
@@ -108,13 +110,18 @@ export default function DistantMovieDetailContainer() {
                                     </Grid.Col>
                                     <Grid.Col size={1} breakPoint='md' >
                                         <ImageSection.ThumbContainer>
-                                            <img src={'http://image.tmdb.org/t/p/original/' + editMovie.poster_path} alt={'http://image.tmdb.org/t/p/w342/' + editMovie.poster_path} />
+                                            {editMovie.poster_path === null || editMovie.poster_path === undefined
+                                                ? <img src={'https://via.placeholder.com/349x524'} alt={editMovie.title} />
+                                                : <img src={'http://image.tmdb.org/t/p/original/' + editMovie.poster_path} alt={'http://image.tmdb.org/t/p/w342/' + editMovie.poster_path} />
+                                            }
+
                                         </ImageSection.ThumbContainer>
                                     </Grid.Col>
                                 </ImageSection.FlexFrame>
                             </Grid.Row>
                         </Grid>
                     </ImageSection.Media>
+                 }
                     <Grid maxFreeze={'true'} >
                         <Heading.Padded>
                             <Grid.Row responsiveCol={'true'} >
@@ -136,9 +143,9 @@ export default function DistantMovieDetailContainer() {
                                     <Section.Frame>
                                         {castDetails.map(item =>
                                             <Card.FixedWidth key={item.id} >
-                                                {item.profile_path === null ?
-                                                    <Card.Image src={'https://via.placeholder.com/342x513'} alt={item.title} /> :
-                                                    <Card.Image src={'http://image.tmdb.org/t/p/w342/' + item.profile_path} alt={item.name} />
+                                                {item.profile_path === null || item.profile_path === undefined
+                                                    ? <Card.Image src={'https://via.placeholder.com/342x513'} alt={item.title} />
+                                                    : <Card.Image src={'http://image.tmdb.org/t/p/w342/' + item.profile_path} alt={item.name} />
                                                 }
                                                 <Card.ContentFrame>
                                                     <Typography.TitleSm>{item.name}</Typography.TitleSm>

@@ -20,21 +20,23 @@ export default function MainHeroContainer() {
 
     }, []);
 
-    return ( 
+    return (
         <ImageSection>
             <ImageSection.Overlay />
-            <ImageSection.Media src={'http://image.tmdb.org/t/p/original/' + distantMovies.backdrop_path} >
-                <Grid maxFreeze={'true'} >
-                    <Grid.Row>
-                        <Grid.Col size={1} >
-                            <ImageSection.Frame>
-                                <Typography.TitleLarge>Add Movies,<br/>TV Shows and more.</Typography.TitleLarge>
-                            </ImageSection.Frame>
-                        </Grid.Col>
-                    </Grid.Row>
-                </Grid>
-            </ImageSection.Media>
+            {distantMovies.backdrop_path === null || distantMovies.backdrop_path === undefined
+                ? ''
+                : <ImageSection.Media src={'http://image.tmdb.org/t/p/original/' + distantMovies.backdrop_path} >
+                    <Grid maxFreeze={'true'} >
+                        <Grid.Row>
+                            <Grid.Col size={1} >
+                                <ImageSection.Frame>
+                                    <Typography.TitleLarge>Add Movies,<br />TV Shows and more.</Typography.TitleLarge>
+                                </ImageSection.Frame>
+                            </Grid.Col>
+                        </Grid.Row>
+                    </Grid>
+                </ImageSection.Media>
+            }
         </ImageSection>
-
     )
 }

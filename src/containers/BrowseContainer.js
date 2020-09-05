@@ -27,9 +27,9 @@ export default function BrowseContainer() {
                         <Section.Frame>
                             {movies.map(item =>
                                 <Card.FixedWidth key={item.id} responsiveWide={'true'}  >
-                                    {item.poster_path === null ?
-                                        <Card.Image src={'https://via.placeholder.com/349x524'} alt={item.title} /> :
-                                        <Card.Image src={item.poster} alt={item.title} />
+                                    {item.poster_path === null || item.poster_path === undefined
+                                        ? <Card.Image src={item.poster} alt={item.title} />
+                                        : <Card.Image src={'https://via.placeholder.com/349x524'} alt={item.title} />
                                     }
                                     <Card.ContentFrame>
                                         <Card.Row spaceBetween={'true'}>

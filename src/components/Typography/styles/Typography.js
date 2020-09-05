@@ -28,6 +28,9 @@ export const TitleMd = styled.h2`
 export const TitleSm = styled.h3`
     font-size: 3.6rem;
     margin-bottom: 23px;
+    @media(max-width: 672px){
+        font-size: 2.3rem;
+    }
 `;
 export const TitleXs = styled.h4`
     font-size: 1.9rem;
