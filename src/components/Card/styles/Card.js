@@ -35,7 +35,7 @@ export const Row = styled.div`
     }
 `;
 
-export const FixedWidth = styled.div`
+export const FixedWidth = styled(motion.div)`
     width: 29%;
     margin-bottom: 23px;
 

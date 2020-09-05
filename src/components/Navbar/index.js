@@ -6,7 +6,7 @@ export default function Navbar({ children, ...restProps }) {
         <Container
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ ease: "easeOut", duration: 0.5 }}
+            transition={{ ease: "easeInOut", duration: 0.5 }}
             {...restProps}>
             {children}
         </Container>
@@ -18,7 +18,7 @@ Navbar.Frame = function NavbarFrame({ children, ...restProps }) {
         <Frame
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: .3, ease: "easeOut", duration: 0.5 }}
+            transition={{ delay: .3, ease: "easeInOut", duration: 0.5 }}
             {...restProps}>
             {children}
         </Frame>

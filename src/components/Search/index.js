@@ -9,7 +9,7 @@ SearchInput.Field = function SearchInputField({ query, setQuery, placeholder, ..
     const [searchActive, setSearchActive] = useState(false)
 
     return (
-        <FieldContainer {...restProps} initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: .3, ease: "easeOut", duration: 0.5 }} >
+        <FieldContainer {...restProps} initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: .3, ease: "easeInOut", duration: 0.5 }} >
             <label htmlFor='search-input' >
                 <svg aria-hidden="true" height='36px' width='36px' transform="rotate(360)" viewBox="0 0 512 512">
                     <defs />

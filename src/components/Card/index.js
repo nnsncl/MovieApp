@@ -13,7 +13,7 @@ export default function Card({ children, ...restProps }) {
 }
 
 Card.FixedWidth = function CardFixedWidth({ children, ...restProps }) {
-    return <FixedWidth {...restProps} >{children}</FixedWidth>
+    return <FixedWidth initial={{ y: -100, opacity: 0, scale: .9 }} animate={{ ease: "easeInOut", duration: 3, y: 0, opacity: 1, scale: 1 }} {...restProps} >{children}</FixedWidth>
 }
 
 Card.Frame = function CardGrid({ children, ...restProps }){
@@ -21,7 +21,7 @@ Card.Frame = function CardGrid({ children, ...restProps }){
 }
 
 Card.Image = function CardImage({ src, alt, ...restProps }) {
-    return <Image initial={{ opacity: 0, scale: .9 }} animate={{ delay: .3, ease: "easeOut", duration: 1, opacity: 1, scale: 1 }} src={src} alt={alt} { ...restProps } />
+    return <Image initial={{ scale: 1, opacity: 0 }} animate={{ duration: 3, opacity: 1 }} whileHover={{ scale: 1.1 }}  src={src} alt={alt} { ...restProps } />
 }
 
 Card.ContentFrame = function CardContentFrame({ children, ...restProps }) {
