@@ -69,6 +69,10 @@ export default function DistantMovieDetailContainer() {
         // eslint-disable-next-line
     }, [])
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
+
     function addNewMovieToLocalDatabase() {
         try {
             axios({

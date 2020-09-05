@@ -1,9 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Card, Grid, Heading, Button, Typography, Section } from '../components'
 import { LocalDatabaseContext } from '../constant/LocalDababase'
 import axios from 'axios'
 export default function BrowseContainer() {
     const { movies } = useContext(LocalDatabaseContext)
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[])
+
     return (
         <Grid maxFreeze={'true'} >
             <Grid.Row>

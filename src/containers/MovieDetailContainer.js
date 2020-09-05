@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { LocalDatabaseContext } from '../constant/LocalDababase'
 import { v4 as uuidv4 } from 'uuid'
 import { useParams } from "react-router-dom";
@@ -21,6 +21,10 @@ export default function MovieDetailContainer() {
             closeOnEsc: true,
         })
 
+        useEffect(() => {
+            window.scrollTo(0, 0)
+        },[])
+
     const addAndRelocate = () => {
             try {
                 axios.delete(`http://localhost:3000/movies/${params.id}`)
@@ -29,7 +33,7 @@ export default function MovieDetailContainer() {
                 alert(error.message)
             }
     }
-    
+
     return (
         <>
             {filteredMovie !== undefined &&
