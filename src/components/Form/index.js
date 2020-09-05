@@ -6,7 +6,7 @@ export default function FormContainer({ isVisible, children, ...restProps }) {
             <Container
                 initial={{ scale: .9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: .6, ease: "easeOut", duration: 0.5 }}
+                transition={{ delay: 0.9, ease: "easeOut", duration: 0.5 }}
                 {...restProps} >
                 {children}
             </Container>
