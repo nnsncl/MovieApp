@@ -39,7 +39,7 @@ const SignIn = ({ history }) => {
                 <Grid.Col size={'1'}>
                     <FormContainer>
                         <Typography.TitleLarge>Sign In</Typography.TitleLarge>
-                        <FormContainer.Form onSubmit={handleSignIn} >
+                        <FormContainer.Form onSubmit={handleSignIn} name="sign-in-form" >
                             <Input.LabelLarge htmlFor='email'>Email</Input.LabelLarge>
                             <Input.Wide
                                 required

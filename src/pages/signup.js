@@ -30,7 +30,7 @@ const SignUp = ({ history }) => {
             <Grid.Col size={'1'}>
                 <FormContainer>
                     <Typography.TitleLarge>Sign Up</Typography.TitleLarge>
-                    <FormContainer.Form onSubmit={handleSignUp} >
+                    <FormContainer.Form onSubmit={handleSignUp} name='sign-up-form' >
                         <Input.LabelLarge htmlFor='name'>Name</Input.LabelLarge>
                         <Input.Wide
                             required
