@@ -1,13 +1,9 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Card, Grid, Heading, Button, Typography, Section } from '../components'
 import { LocalDatabaseContext } from '../constant/LocalDababase'
 import axios from 'axios'
 export default function BrowseContainer() {
     const { movies } = useContext(LocalDatabaseContext)
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    },[])
 
     return (
         <Grid maxFreeze={'true'} >
@@ -27,10 +23,7 @@ export default function BrowseContainer() {
                         <Section.Frame>
                             {movies.map(item =>
                                 <Card.FixedWidth key={item.id} responsiveWide={'true'}  >
-                                    {item.poster_path === null || item.poster_path === undefined
-                                        ? <Card.Image src={item.poster} alt={item.title} />
-                                        : <Card.Image src={'https://via.placeholder.com/349x524'} alt={item.title} />
-                                    }
+                                    <Card.Image src={item.poster} alt={item.title} />
                                     <Card.ContentFrame>
                                         <Card.Row spaceBetween={'true'}>
                                             <Card.ContentFrame>

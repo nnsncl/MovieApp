@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { LocalDatabaseContext } from '../constant/LocalDababase'
 import { v4 as uuidv4 } from 'uuid'
 import { useParams } from "react-router-dom";
@@ -20,10 +20,6 @@ export default function MovieDetailContainer() {
             closeOnOutsideClick: true,
             closeOnEsc: true,
         })
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
 
     const addAndRelocate = () => {
         try {
@@ -48,7 +44,7 @@ export default function MovieDetailContainer() {
                                 <Typography.BodyLarge>You're about to delete <strong>{filteredMovie.title}</strong> from your list</Typography.BodyLarge>
                                 <ModalContainer.FlexFrame>
                                     <Button onClick={closeModal}>Cancel</Button>
-                                    <Button.Light onClick={() => addAndRelocate()} >Yes, delete</Button.Light>
+                                    <Button onClick={() => addAndRelocate()} >Yes, delete</Button>
                                 </ModalContainer.FlexFrame>
                             </ModalContainer>
                         </Modal>
@@ -108,7 +104,7 @@ export default function MovieDetailContainer() {
                                         <Section.Frame>
                                             {filteredMovie.actors.map(item =>
                                                 <Card.FixedWidth key={uuidv4()} >
-                                                    {item.photo === null || item.photo === undefined
+                                                    {item.photo === 'http://image.tmdb.org/t/p/w342/null' || item.photo === 'http://image.tmdb.org/t/p/w342/undefined'
                                                         ? <Card.Image src={'https://via.placeholder.com/349x524'} alt={item.name} />
                                                         : <Card.Image src={item.photo} alt={item.name} />
                                                     }

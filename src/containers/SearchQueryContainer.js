@@ -60,13 +60,16 @@ export default function SearchQueryContainer() {
                             <Section.Frame>
                                 {distantMovies.map(item =>
                                     <Card.FixedWidth key={uuidv4()} responsiveWide={'true'}  >
-                                        {item.poster_path === null ?
-                                            <Card.Image src={'https://via.placeholder.com/349x524'} alt={item.title} /> :
-                                            <Card.Image src={'http://image.tmdb.org/t/p/w342' + item.poster_path} alt={item.title} />
+                                        {item.poster_path === null || item.poster_path === undefined
+                                            ? <Card.Image src={'https://via.placeholder.com/349x524'} alt={item.title} />
+                                            : <Card.Image src={'http://image.tmdb.org/t/p/w342' + item.poster_path} alt={item.title} />
                                         }
                                         <Card.ContentFrame>
                                             <Card.Row spaceBetween={'true'}>
-                                                <Typography.TitleSm>{item.title}</Typography.TitleSm>
+                                                {item.poster_path === null || item.poster_path === undefined
+                                                    ? <Typography.TitleSm>No title</Typography.TitleSm>
+                                                    : <Typography.TitleSm>{item.title}</Typography.TitleSm>
+                                                }
                                             </Card.Row>
                                             <Card.Row>
                                                 <Button.Light to={'/tmdb-details/' + item.id} >

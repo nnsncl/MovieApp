@@ -43,7 +43,7 @@ export default function DistantMovieDetailContainer() {
                             (
                                 {
                                     name: `${item.name}`,
-                                    photo: `http://image.tmdb.org/t/p/original/${item.profile_path}`,
+                                    photo: `http://image.tmdb.org/t/p/w342/${item.profile_path}`,
                                     character: `${item.character}`,
                                 }
                             )
@@ -52,7 +52,7 @@ export default function DistantMovieDetailContainer() {
                             (
                                 {
                                     title: `${item.title}`,
-                                    poster: `http://image.tmdb.org/t/p/original/${item.poster_path}`,
+                                    poster: `http://image.tmdb.org/t/p/w342/${item.poster_path}`,
                                     release_date: `${item.release_date}`,
                                 }
                             )
@@ -67,10 +67,6 @@ export default function DistantMovieDetailContainer() {
             alert(error.message)
         }
         // eslint-disable-next-line
-    }, [])
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
     }, [])
 
     function addNewMovieToLocalDatabase() {
@@ -90,38 +86,38 @@ export default function DistantMovieDetailContainer() {
         <>
             {editMovie !== undefined &&
                 <>
-                { editMovie.backdrop_path === null || editMovie.backdrop_path === undefined
-                    ? ''
-                    : <ImageSection.Media src={'http://image.tmdb.org/t/p/original/' + editMovie.backdrop_path}>
-                        <Grid maxFreeze={'true'} >
-                            <Grid.Row responsiveCol={'true'} >
-                                <ImageSection.FlexFrame>
-                                    <Grid.Col size={1} >
-                                        <Typography.TitleLarge>{editMovie.title}</Typography.TitleLarge>
-                                        <Typography.BodyLarge><strong>Release date:</strong>&nbsp;{editMovie.release_date}</Typography.BodyLarge>
-                                        <Grid.Row>
-                                            {editMovie.genres !== undefined &&
-                                                editMovie.genres.map(item => <Chips key={uuidv4()} >{item.name}</Chips>)
-                                            }
-                                        </Grid.Row>
-                                        <Section>
-                                            <Button.Large onClick={() => addNewMovieToLocalDatabase()} >Add to my list</Button.Large>
-                                        </Section>
-                                    </Grid.Col>
-                                    <Grid.Col size={1} breakPoint='md' >
-                                        <ImageSection.ThumbContainer>
-                                            {editMovie.poster_path === null || editMovie.poster_path === undefined
-                                                ? <img src={'https://via.placeholder.com/349x524'} alt={editMovie.title} />
-                                                : <img src={'http://image.tmdb.org/t/p/original/' + editMovie.poster_path} alt={'http://image.tmdb.org/t/p/w342/' + editMovie.poster_path} />
-                                            }
+                    {editMovie.backdrop_path === null || editMovie.backdrop_path === undefined
+                        ? ''
+                        : <ImageSection.Media src={'http://image.tmdb.org/t/p/original/' + editMovie.backdrop_path}>
+                            <Grid maxFreeze={'true'} >
+                                <Grid.Row responsiveCol={'true'} >
+                                    <ImageSection.FlexFrame>
+                                        <Grid.Col size={1} >
+                                            <Typography.TitleLarge>{editMovie.title}</Typography.TitleLarge>
+                                            <Typography.BodyLarge><strong>Release date:</strong>&nbsp;{editMovie.release_date}</Typography.BodyLarge>
+                                            <Grid.Row>
+                                                {editMovie.genres !== undefined &&
+                                                    editMovie.genres.map(item => <Chips key={uuidv4()} >{item.name}</Chips>)
+                                                }
+                                            </Grid.Row>
+                                            <Section>
+                                                <Button.Large onClick={() => addNewMovieToLocalDatabase()} >Add to my list</Button.Large>
+                                            </Section>
+                                        </Grid.Col>
+                                        <Grid.Col size={1} breakPoint='md' >
+                                            <ImageSection.ThumbContainer>
+                                                {editMovie.poster_path === null || editMovie.poster_path === undefined
+                                                    ? <img src={'https://via.placeholder.com/349x524'} alt={editMovie.title} />
+                                                    : <img src={'http://image.tmdb.org/t/p/original/' + editMovie.poster_path} alt={'http://image.tmdb.org/t/p/w342/' + editMovie.poster_path} />
+                                                }
 
-                                        </ImageSection.ThumbContainer>
-                                    </Grid.Col>
-                                </ImageSection.FlexFrame>
-                            </Grid.Row>
-                        </Grid>
-                    </ImageSection.Media>
-                 }
+                                            </ImageSection.ThumbContainer>
+                                        </Grid.Col>
+                                    </ImageSection.FlexFrame>
+                                </Grid.Row>
+                            </Grid>
+                        </ImageSection.Media>
+                    }
                     <Grid maxFreeze={'true'} >
                         <Heading.Padded>
                             <Grid.Row responsiveCol={'true'} >
