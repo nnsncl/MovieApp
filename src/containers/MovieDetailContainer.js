@@ -128,7 +128,7 @@ export default function MovieDetailContainer() {
                                         <Section.Frame>
                                             {filteredMovie.similar_movies.map(item =>
                                                 <Card.FixedWidth key={uuidv4()} >
-                                                    {item.poster === null || item.poster === undefined
+                                                    {item.poster === 'http://image.tmdb.org/t/p/w342/null' || item.poster === 'http://image.tmdb.org/t/p/w342/undefined'
                                                         ? <Card.Image src={'https://via.placeholder.com/349x524'} alt={item.name} />
                                                         : <Card.Image src={item.poster} alt={item.name} />
                                                     }
