@@ -60,7 +60,8 @@ This project cannot be started without a .env file at the project's root, is hav
 
 
 
-**## Available Scripts**
+
+## Available Scripts
 
 
 
@@ -68,7 +69,7 @@ In the project directory, you can run:
 
 
 
-**### `yarn start`**
+### `yarn start`
 
 
 
@@ -84,7 +85,7 @@ You will also see any lint errors in the console.
 
 
 
-**### `yarn test`**
+### `yarn test`
 
 
 
@@ -94,7 +95,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 
 
-**### `yarn build`**
+### `yarn build`
 
 
 
@@ -114,27 +115,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 
 
-**### `yarn eject`**
 
-
-
-***\*Note: this is a one-way operation. Once you** **`eject`****, you can’t go back!\****
-
-
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-
-
-**## Learn More**
+## Learn More
 
 
 
@@ -146,7 +128,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 
 
-**### Code Splitting**
+### Code Splitting
 
 
 
@@ -154,7 +136,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/co
 
 
 
-**### Analyzing the Bundle Size**
+### Analyzing the Bundle Size
 
 
 
@@ -162,7 +144,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/an
 
 
 
-**### Making a Progressive Web App**
+### Making a Progressive Web App
 
 
 
@@ -170,7 +152,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ma
 
 
 
-**### Advanced Configuration**
+### Advanced Configuration
 
 
 
@@ -178,7 +160,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ad
 
 
 
-**### Deployment**
+### Deployment
 
 
 
@@ -186,7 +168,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 
 
-**### `yarn build` fails to minify**
+### `yarn build` fails to minify
 
 
 
